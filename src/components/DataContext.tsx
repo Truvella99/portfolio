@@ -1,5 +1,7 @@
 "use client";
 import React, { createContext, useState, useEffect, ReactNode } from "react";
+import enJson from "@/locales/en.json";
+import itJson from "@/locales/it.json";
 
 // Define the shape of your context data
 interface TranslationContextType {
@@ -19,15 +21,7 @@ export const TranslationProvider = ({ children }: { children: ReactNode }) => {
   useEffect(() => {
     // Dynamically load the JSON based on the selected language
     const loadTranslations = async () => {
-      const isDev = process.env.NODE_ENV === "development";
-      
-      // Take jsonc in development and json in production
-      const data =
-        language === "en"
-          ? await import(`@/locales/en.${isDev ? "jsonc" : "json"}`).then((mod) => mod.default)
-          : await import(`@/locales/it.${isDev ? "jsonc" : "json"}`).then((mod) => mod.default);
-
-      setTranslations(data);
+      setTranslations(language === "en" ? enJson : itJson);
     };
     loadTranslations();
   }, [language]);

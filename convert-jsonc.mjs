@@ -1,19 +1,17 @@
-// scripts/convert-jsonc.mjs
-import fs from 'fs';
-import path from 'path';
-import stripJsonComments from 'strip-json-comments';
+import { readFile, writeFile } from "fs/promises";
+import { parse } from "jsonc-parser";
+import path from "path";
+import glob from "fast-glob";
 
-const localesDir = './src/locales';
+const inputDir = "src/locales";
+const files = await glob(`${inputDir}/*.jsonc`);
 
-for (const file of fs.readdirSync(localesDir)) {
-  if (file.endsWith('.jsonc')) {
-    const jsoncPath = path.join(localesDir, file);
-    const jsonPath = path.join(localesDir, file.replace('.jsonc', '.json'));
-
-    const jsoncContent = fs.readFileSync(jsoncPath, 'utf8');
-    const stripped = stripJsonComments(jsoncContent);
-
-    fs.writeFileSync(jsonPath, stripped);
-    console.log(`✅ Converted ${file} -> ${path.basename(jsonPath)}`);
-  }
-}
+await Promise.all(
+  files.map(async (file) => {
+    const content = await readFile(file, "utf-8");
+    const parsed = parse(content);
+    const jsonOutPath = file.replace(/\.jsonc$/, ".json");
+    await writeFile(jsonOutPath, JSON.stringify(parsed, null, 2), "utf-8");
+    console.log(`✅ Converted: ${file} → ${jsonOutPath}`);
+  })
+);
