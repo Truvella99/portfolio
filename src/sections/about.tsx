@@ -5,10 +5,10 @@ import { TranslationContext } from "@/components/DataContext";
 import { Tilt } from 'react-tilt';
 
 function computeAge(dateString: string): number {
-    let today = new Date();
-    let birthDate = new Date(dateString);
+    const today = new Date();
+    const birthDate = new Date(dateString);
     let age = today.getFullYear() - birthDate.getFullYear();
-    let m = today.getMonth() - birthDate.getMonth();
+    const m = today.getMonth() - birthDate.getMonth();
     if (m < 0 || (m === 0 && today.getDate() < birthDate.getDate())) {
         age--;
     }
