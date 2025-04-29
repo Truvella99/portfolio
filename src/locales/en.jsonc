@@ -1,0 +1,30 @@
+{
+  // List of sections for navigation or display
+  "sections": [
+    "Home",          // Home section
+    "About Me",      // About Me section
+    "Skills",        // Skills section
+    "Formation",     // Formation section
+    "Projects",      // Projects section
+    "Contact Me"     // Contact Me section
+  ],
+  // Name of the person
+  "name": "Domenico Gagliardo",
+  // --------------------------------------- HOME SECTION ---------------------------------------
+  "hello": "Hello, I&apos;m",
+  "passionate": "A Passionate",
+  "se": "Software Engineer",
+  "sd": "Software Developer",
+  "md": "Mobile Developer",
+  "fd": "Full Stack Developer",
+  // --------------------------------------- ABOUT ME SECTION ---------------------------------------
+  "about": "About Me",
+  "description": "I am a software engineer with a passion for technology and a strong desire to learn and grow. I have experience in various programming languages and frameworks, and I am always eager to take on new challenges. My goal is to create innovative solutions that make a positive impact on the world.",
+  "nameTitle": "Name",
+  "ageTitle": "Age",
+  "years": "Years",
+  "occupationTitle": "Occupation",
+  "occupation": "Software Engineer",
+  "nationalityTitle": "Nationality",
+  "nationality": "Italian"
+}

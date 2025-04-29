@@ -1,27 +1,38 @@
 import IconUtility from "@/utils/icon";
 import { FaGithub, FaLinkedin } from "react-icons/fa";
 import { TypeAnimation } from 'react-type-animation';
+import { useContext } from "react";
+import { TranslationContext } from "@/components/DataContext";
+
+function decodeHtmlEntities(input: string): string {
+    const textarea = document.createElement("textarea");
+    textarea.innerHTML = input;
+    return textarea.value;
+}
 
 export default function Home() {
+    const translations = useContext(TranslationContext)?.translations;
+    if (!translations) return null; // Handle case when translations are not yet loaded
+    
     return (
-        <section id="Home" className="text-white min-h-screen flex items-center justify-center">
-            <div className="container mx-auto px-6 flex flex-col lg:flex-row items-center">
+        <section id={translations.sections[0]} className="text-white min-h-screen flex items-center justify-center">
+            <div className="container mx-auto px-6 flex flex-col-reverse lg:flex-row items-center">
                 {/* Text content */}
                 <div className="w-full lg:w-2/5 text-center lg:text-left">
-                    <h3 className="text-blue-400 tracking-wider text-5xl xl:text-6xl mb-12 xl:mb-20">Hello I&apos;m</h3>
-                    <h1 className="text-6xl xl:text-7xl tracking-wider font-bold mt-2 mb-12 xl:mb-20">Domenico Gagliardo</h1>
+                    <h3 className="text-blue-400 tracking-wider text-5xl xl:text-6xl mb-12 xl:mb-20">{decodeHtmlEntities(translations.hello)}</h3>
+                    <h1 className="text-6xl xl:text-7xl tracking-wider font-bold mt-2 mb-12 xl:mb-20">{translations.name}</h1>
                     <p className="mt-4 text-2xl xl:text-3xl">
-                        A Passionate{' '}
+                        {`${translations.passionate} `}
                         <span className="text-blue-400">
                             <TypeAnimation
                                 sequence={[
-                                    'Software Engineer',
+                                    translations.se,
                                     1000, // wait 1s
-                                    'Software Developer',
+                                    translations.sd,
                                     1000,
-                                    'Mobile Developer',
+                                    translations.md,
                                     1000,
-                                    'FullStack Developer',
+                                    translations.fd,
                                     1000
                                 ]}
                                 speed={50}
@@ -36,7 +47,7 @@ export default function Home() {
                 <div className="w-full lg:w-3/5 mb-12 lg:mb-0 flex justify-center items-center min-h-[400px] md:min-h-[500px] xl:min-h-[600px]">
                     <img 
                         src="./profile-img.png"
-                        alt="Domenico Gagliardo" 
+                        alt={translations.name} 
                         className="bg-blue-400 rounded-full h-auto max-h-[400px] md:max-h-[500px] xl:max-h-[580px] w-auto shadow-lg"
                     />
                 </div>

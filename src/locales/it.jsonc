@@ -1,0 +1,30 @@
+{
+    // List of sections for navigation or display
+    "sections": [
+      "Home",          // Home section
+      "Su di Me",      // About Me section in Italian
+      "Competenze",    // Skills section in Italian
+      "Formazione",    // Formation section in Italian
+      "Progetti",      // Projects section in Italian
+      "Contattami"     // Contact Me section in Italian
+    ],
+    // Name of the person
+    "name": "Domenico Gagliardo",
+    // --------------------------------------- HOME SECTION ---------------------------------------
+    "hello": "Ciao, Io Sono",
+    "passionate": "Un Appassionato",
+    "se": "Software Engineer",
+    "sd": "Software Developer",
+    "md": "Mobile Developer",
+    "fd": "Full Stack Developer",
+    // --------------------------------------- ABOUT ME SECTION ---------------------------------------
+    "about": "Su di Me",
+    "description": "CAMELLLLLLLLLLLL",
+    "nameTitle": "Nome",
+    "ageTitle": "Età",
+    "years": "Anni",
+    "occupationTitle": "Occupazione",
+    "occupation": "Software Engineer",
+    "nationalityTitle": "Nazionalità",
+    "nationality": "Italiano"
+}

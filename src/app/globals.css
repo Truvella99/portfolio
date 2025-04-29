@@ -15,6 +15,7 @@
 @media (prefers-color-scheme: dark) {
   :root {
     --background: #0A0A72;
+    --secondary-background: #201c74;
     --foreground: #ededed;
   }
 }
@@ -27,4 +28,5 @@ body {
 
 html {
   scroll-behavior: smooth;
+  scroll-padding-top: 4rem;
 }
