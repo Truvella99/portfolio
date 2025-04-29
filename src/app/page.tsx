@@ -1,18 +1,17 @@
 "use client";
-import { useState } from "react";
-import Image from "next/image";
 import NavBar from "@/components/navbar";
+import Home from "@/sections/home";
 
-export default function Home() {
-  const [section, setSection] = useState('home');
+export default function App() {
   return (
     <>
-    <NavBar section={section} setSection={setSection}/>
-    {Array.from({ length: 100 }, (_, i) => (
-      <div key={i} className="h-screen flex items-center justify-center">
-        <h1 className="text-4xl font-bold">Section {i + 1}</h1>
-      </div>
-    ))}
+      <NavBar/>
+      <Home/>
+      {Array.from({ length: 2 }, (_, i) => (
+        <div key={i} className="h-screen flex items-center justify-center">
+          <h1 className="text-4xl font-bold">Section {i + 1}</h1>
+        </div>
+      ))}
     </>
   );
 }
