@@ -8,7 +8,7 @@ export default function Home() {
             <div className="container mx-auto px-6 flex flex-col lg:flex-row items-center">
                 {/* Text content */}
                 <div className="w-full lg:w-2/5 text-center lg:text-left">
-                    <h3 className="text-blue-400 tracking-wider text-5xl xl:text-6xl mb-12 xl:mb-20">Hello I'm</h3>
+                    <h3 className="text-blue-400 tracking-wider text-5xl xl:text-6xl mb-12 xl:mb-20">Hello I&apos;m</h3>
                     <h1 className="text-6xl xl:text-7xl tracking-wider font-bold mt-2 mb-12 xl:mb-20">Domenico Gagliardo</h1>
                     <p className="mt-4 text-2xl xl:text-3xl">
                         A Passionate{' '}
