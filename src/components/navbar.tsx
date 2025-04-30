@@ -3,7 +3,7 @@ import { Bars3Icon, XMarkIcon } from '@heroicons/react/24/outline'
 import Image from "next/image";
 import { FaGithub, FaLinkedin } from "react-icons/fa";
 import IconUtility from '@/utils/icon';
-import React, { useContext } from "react";
+import React, { useContext, useRef, useEffect } from "react";
 import { TranslationContext } from "@/components/DataContext";
 import { useState } from "react";
 
@@ -15,14 +15,75 @@ export default function NavBar(props: any) {
   const [section, setSection] = useState('Home');
   const {setIsSideBarOpen} = props;
   const translations = useContext(TranslationContext)?.translations;
-  if (!translations) return null; // Handle case when translations are not yet loaded
-  
-  const navigation = translations.sections.map((section: string) => {
+  const sectionsRef = useRef<HTMLDivElement[]>([]); // To track section elements
+  const isManualClickRef = useRef(false); // To track manual clicks
+
+  const navigation = translations?.sections.map((section: string) => {
       return {
         name: section,
         href: `#${section}`
       }
-  });
+  }) || [];
+
+  useEffect(() => {
+    if (!translations) return; // Do nothing if translations are not loaded yet
+
+    // Clear previous refs
+    sectionsRef.current = [];
+
+    // Get all the section elements by their IDs
+    const sectionElements = navigation.map((item: { name: string; href: string }) =>
+      document.getElementById(item.name)
+    );
+    sectionsRef.current = sectionElements.filter(
+      (el: any): el is HTMLDivElement => el !== null
+    );
+
+    const observer = new IntersectionObserver(
+      (entries) => {
+        // Find the section that is currently intersecting
+        const visibleSection = entries.find((entry) => entry.isIntersecting);
+        if (isManualClickRef.current && visibleSection?.target.id != section) {
+          // Skip observer updates if a manual click recently occurred and not reached the section yet
+          return;
+        }
+        if (visibleSection?.target.id) {
+          setSection(visibleSection.target.id); // Update the state
+          isManualClickRef.current = false; // Reset manual click flag
+        }
+      },
+      {
+        root: null, // Observe within the viewport
+        threshold: 0.9, // Trigger when 90% of the section is visible
+      }
+    );
+
+    // Start observing the sections
+    sectionsRef.current.forEach((sectionElement) => {
+      if (sectionElement) observer.observe(sectionElement);
+    });
+
+    // Cleanup observer on unmount
+    return () => {
+      sectionsRef.current.forEach((sectionElement) => {
+        if (sectionElement) observer.unobserve(sectionElement);
+      });
+    };
+  }, [navigation, translations]);
+
+  // Handle manual click on the navbar
+  const handleNavClick = (sectionName: string) => {
+    isManualClickRef.current = true; // Indicate a manual click
+    setSection(sectionName); // Immediately update the section state
+    setIsSideBarOpen(false); // Close the sidebar if open
+  };
+
+  // Render a fallback UI if translations are not ready
+  if (!translations) {
+    return (
+      <></>
+    );
+  }
 
   return (
     <Disclosure as="nav" className="bg-[#0A0A72] sm:sticky top-0 z-50">
@@ -51,7 +112,7 @@ export default function NavBar(props: any) {
                         (item.name === section) ? 'bg-blue-400 text-white' : 'text-gray-300 hover:bg-blue-400 hover:text-white',
                         'rounded-md px-3 py-2 text-sm font-medium',
                       )}
-                      onClick={() => setSection(item.name)}
+                      onClick={() => handleNavClick(item.name)}
                     >
                       {item.name}
                     </a>
@@ -93,7 +154,7 @@ export default function NavBar(props: any) {
                   (item.name === section) ? 'bg-blue-400 text-white' : 'text-gray-300 hover:bg-blue-400 hover:text-white',
                   'block rounded-md px-3 py-2 text-base font-medium',
                 )}
-                onClick={() => {setSection(item.name); setIsSideBarOpen(false)}}
+                onClick={() => handleNavClick(item.name)}
               >
                 {item.name}
               </DisclosureButton>

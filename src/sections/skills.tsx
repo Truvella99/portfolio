@@ -27,90 +27,14 @@ export default function Skills() {
                     <h1 className="text-blue-400 text-5xl font-bold leading-tight mb-8">{translations.skills}</h1>
                     <p className="text-gray-300 mb-12 text-xl">{translations.skillsDescription}</p>
                     
-                    <div className="grid lg:grid-cols-14 md:grid-cols-10 grid-cols-6 gap-6 ">
-                        <SkillUtility icon='android' link="https://www.typescriptlang.org/" />
-                        <SkillUtility icon='androidstudio' link="https://www.typescriptlang.org/" />
-                        <SkillUtility icon='api' link="https://www.typescriptlang.org/" />
-                        <SkillUtility icon='assembly' link="https://www.typescriptlang.org/" />
-                        <SkillUtility icon='azure' link="https://www.typescriptlang.org/" />
-                        <SkillUtility icon='c' link="https://www.typescriptlang.org/" />
-                        <SkillUtility icon='chartjs' link="https://www.typescriptlang.org/" />
-                        <SkillUtility icon='chatgpt' link="https://www.typescriptlang.org/" />
-                        <SkillUtility icon='chrome' link="https://www.typescriptlang.org/" />
-                        <SkillUtility icon='clion' link="https://www.typescriptlang.org/" />
-                        <SkillUtility icon='cpp' link="https://www.typescriptlang.org/" />
-                        <SkillUtility icon='css' link="https://www.typescriptlang.org/" />
-                        <SkillUtility icon='dart' link="https://www.typescriptlang.org/" />
-                        <SkillUtility icon='discord' link="https://www.typescriptlang.org/" />
-                        <SkillUtility icon='docker' link="https://www.typescriptlang.org/" />
-                        <SkillUtility icon='excel' link="https://www.typescriptlang.org/" />
-                        <SkillUtility icon='expressjs' link="https://www.typescriptlang.org/" />
-                        <SkillUtility icon='firebase' link="https://www.typescriptlang.org/" />
-                        <SkillUtility icon='flutter' link="https://www.typescriptlang.org/" />
-                        <SkillUtility icon='gcp' link="https://www.typescriptlang.org/" />
-                        <SkillUtility icon='git' link="https://www.typescriptlang.org/" />
-                        <SkillUtility icon='github' link="https://www.typescriptlang.org/" />
-                        <SkillUtility icon='githubactions' link="https://www.typescriptlang.org/" />
-                        <SkillUtility icon='githubcopilot' link="https://www.typescriptlang.org/" />
-                        <SkillUtility icon='githubpages' link="https://www.typescriptlang.org/" />
-                        <SkillUtility icon='gitlab' link="https://www.typescriptlang.org/" />
-                        <SkillUtility icon='gmail' link="https://www.typescriptlang.org/" />
-                        <SkillUtility icon='googlecolab' link="https://www.typescriptlang.org/" />
-                        <SkillUtility icon='gradle' link="https://www.typescriptlang.org/" />
-                        <SkillUtility icon='grafana' link="https://www.typescriptlang.org/" />
-                        <SkillUtility icon='hibernate' link="https://www.typescriptlang.org/" />
-                        <SkillUtility icon='html' link="https://www.typescriptlang.org/" />
-                        <SkillUtility icon='idea' link="https://www.typescriptlang.org/" />
-                        <SkillUtility icon='java' link="https://www.typescriptlang.org/" />
-                        <SkillUtility icon='javascript' link="https://www.typescriptlang.org/" />
-                        <SkillUtility icon='json' link="https://www.typescriptlang.org/" />
-                        <SkillUtility icon='jupyter' link="https://www.typescriptlang.org/" />
-                        <SkillUtility icon='jwt' link="https://www.typescriptlang.org/" />
-                        <SkillUtility icon='kafka' link="https://www.typescriptlang.org/" />
-                        <SkillUtility icon='keycloak' link="https://www.typescriptlang.org/" />
-                        <SkillUtility icon='kotlin' link="https://www.typescriptlang.org/" />
-                        <SkillUtility icon='latex' link="https://www.typescriptlang.org/" />
-                        <SkillUtility icon='linkedin' link="https://www.typescriptlang.org/" />
-                        <SkillUtility icon='linux' link="https://www.typescriptlang.org/" />
-                        <SkillUtility icon='materialui' link="https://www.typescriptlang.org/" />
-                        <SkillUtility icon='mongodb' link="https://www.typescriptlang.org/" />
-                        <SkillUtility icon='mysql' link="https://www.typescriptlang.org/" />
-                        <SkillUtility icon='nextjs' link="https://www.typescriptlang.org/" />
-                        <SkillUtility icon='ngrok' link="https://www.typescriptlang.org/" />
-                        <SkillUtility icon='nodejs' link="https://www.typescriptlang.org/" />
-                        <SkillUtility icon='notion' link="https://www.typescriptlang.org/" />
-                        <SkillUtility icon='notepadpp' link="https://www.typescriptlang.org/" />
-                        <SkillUtility icon='npm' link="https://www.typescriptlang.org/" />
-                        <SkillUtility icon='numpy' link="https://www.typescriptlang.org/" />
-                        <SkillUtility icon='obs' link="https://www.typescriptlang.org/" />
-                        <SkillUtility icon='overleaf' link="https://www.typescriptlang.org/" />
-                        <SkillUtility icon='postgresql' link="https://www.typescriptlang.org/" />
-                        <SkillUtility icon='postman' link="https://www.typescriptlang.org/" />
-                        <SkillUtility icon='powerpoint' link="https://www.typescriptlang.org/" />
-                        <SkillUtility icon='prometheus' link="https://www.typescriptlang.org/" />
-                        <SkillUtility icon='pycharm' link="https://www.typescriptlang.org/" />
-                        <SkillUtility icon='python' link="https://www.typescriptlang.org/" />
-                        <SkillUtility icon='pytorch' link="https://www.typescriptlang.org/" />
-                        <SkillUtility icon='react' link="https://www.typescriptlang.org/" />
-                        <SkillUtility icon='reactbootstrap' link="https://www.typescriptlang.org/" />
-                        <SkillUtility icon='rust' link="https://www.typescriptlang.org/" />
-                        <SkillUtility icon='spark' link="https://www.typescriptlang.org/" />
-                        <SkillUtility icon='spring' link="https://www.typescriptlang.org/" />
-                        <SkillUtility icon='sqlite' link="https://www.typescriptlang.org/" />
-                        <SkillUtility icon='tailwindcss' link="https://www.typescriptlang.org/" />
-                        <SkillUtility icon='teams' link="https://www.typescriptlang.org/" />
-                        <SkillUtility icon='tomcat' link="https://www.typescriptlang.org/" />
-                        <SkillUtility icon='typescript' link="https://www.typescriptlang.org/" />
-                        <SkillUtility icon='vim' link="https://www.typescriptlang.org/" />
-                        <SkillUtility icon='vite' link="https://www.typescriptlang.org/" />
-                        <SkillUtility icon='vmwareworkstation' link="https://www.typescriptlang.org/" />
-                        <SkillUtility icon='vscode' link="https://www.typescriptlang.org/" />
-                        <SkillUtility icon='webstorm' link="https://www.typescriptlang.org/" />
-                        <SkillUtility icon='windows' link="https://www.typescriptlang.org/" />
-                        <SkillUtility icon='wireshark' link="https://www.typescriptlang.org/" />
-                        <SkillUtility icon='word' link="https://www.typescriptlang.org/" />
-                        <SkillUtility icon='wsl' link="https://www.typescriptlang.org/" />
-                        <SkillUtility icon='yaml' link="https://www.typescriptlang.org/" />
+                    <div className="grid lg:grid-cols-14 md:grid-cols-10 grid-cols-5 gap-6 ">
+                        {/* Map through the skills files and create a SkillUtility component for each skill*/}
+                        {Object.entries(translations.technicalSkills as Record<string, string>).map(([key, value], index) => (
+                            <SkillUtility key={index} icon={key} link={value} />
+                        ))}
+                        {Object.entries(translations.nonTechnicalSkills as Record<string, string>).map(([key, value], index) => (
+                            <SkillUtility key={index} icon={key} link={value} />
+                        ))}
                     </div>
                 </div>                
             </div>
