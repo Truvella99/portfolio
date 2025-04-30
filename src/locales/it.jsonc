@@ -19,12 +19,15 @@
     "fd": "Full Stack Developer",
     // --------------------------------------- ABOUT ME SECTION ---------------------------------------
     "about": "Su di Me",
-    "description": "CAMELLLLLLLLLLLL",
+    "aboutDescription": "CAMELLLLLLLLLLLL",
     "nameTitle": "Nome",
     "ageTitle": "Età",
     "years": "Anni",
     "occupationTitle": "Occupazione",
     "occupation": "Software Engineer",
     "nationalityTitle": "Nazionalità",
-    "nationality": "Italiano"
+    "nationality": "Italiano",
+    // --------------------------------------- SKILLS SECTION ---------------------------------------
+    "skills": "Skills",
+    "skillsDescription": "Durante il mio percorso di studi e anche per interesse personale, ho sviluppato conoscenze relative a differenti linguaggi di programmazione, software e framework che hanno portato alla mia crescita in ambito professionale."
 }

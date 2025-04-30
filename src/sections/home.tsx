@@ -16,7 +16,7 @@ export default function Home() {
     
     return (
         <section id={translations.sections[0]} className="text-white min-h-screen flex items-center justify-center">
-            <div className="container mx-auto px-6 flex flex-col-reverse lg:flex-row items-center">
+            <div className="container max-w-8xl mx-auto px-6 flex flex-col-reverse lg:flex-row items-center">
                 {/* Text content */}
                 <div className="w-full lg:w-2/5 text-center lg:text-left">
                     <h3 className="text-blue-400 tracking-wider text-5xl xl:text-6xl mb-12 xl:mb-20">{decodeHtmlEntities(translations.hello)}</h3>

@@ -19,12 +19,15 @@
   "fd": "Full Stack Developer",
   // --------------------------------------- ABOUT ME SECTION ---------------------------------------
   "about": "About Me",
-  "description": "I am a software engineer with a passion for technology and a strong desire to learn and grow. I have experience in various programming languages and frameworks, and I am always eager to take on new challenges. My goal is to create innovative solutions that make a positive impact on the world.",
+  "aboutDescription": "I am a software engineer with a passion for technology and a strong desire to learn and grow. I have experience in various programming languages and frameworks, and I am always eager to take on new challenges. My goal is to create innovative solutions that make a positive impact on the world.",
   "nameTitle": "Name",
   "ageTitle": "Age",
   "years": "Years",
   "occupationTitle": "Occupation",
   "occupation": "Software Engineer",
   "nationalityTitle": "Nationality",
-  "nationality": "Italian"
+  "nationality": "Italian",
+  // --------------------------------------- SKILLS SECTION ---------------------------------------
+  "skills": "Skills",
+  "skillsDescription": "During my studies and also for personal interest, I developed knowledge of different programming languages, software and frameworks that led to my professional growth."
 }
