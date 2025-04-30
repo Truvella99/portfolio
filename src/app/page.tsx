@@ -13,9 +13,9 @@ export default function App() {
     <TranslationProvider>
       <NavBar setIsSideBarOpen={setIsSideBarOpen} />
       {!isSideBarOpen ? <div className="scroll-padding-top-custom"> 
-        <FadeInOnScroll children={<Home/>}/>
-        <FadeInOnScroll children={<About/>}/>
-        <FadeInOnScroll children={<Skills/>}/>
+        <FadeInOnScroll><Home/></FadeInOnScroll>
+        <FadeInOnScroll><About/></FadeInOnScroll>
+        <FadeInOnScroll><Skills/></FadeInOnScroll>
         {Array.from({ length: 2 }, (_, i) => (
           <div key={i} className="h-screen flex items-center justify-center">
             <h1 className="text-4xl font-bold">Section {i + 1}</h1>
