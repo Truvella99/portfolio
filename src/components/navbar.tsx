@@ -16,6 +16,7 @@ export default function NavBar(props: any) {
   const {setIsSideBarOpen} = props;
   const translations = useContext(TranslationContext)?.translations;
   const sectionsRef = useRef<HTMLDivElement[]>([]); // To track section elements
+  const sectionVisibilities: SectionVisibility[] = []; // To track visibility of sections
   const isManualClickRef = useRef(false); // To track manual clicks
 
   const navigation = translations?.sections.map((section: string) => {
@@ -24,6 +25,11 @@ export default function NavBar(props: any) {
         href: `#${section}`
       }
   }) || [];
+
+  interface SectionVisibility {
+    sectionId: string;
+    visibleRatio: number;
+  }
 
   useEffect(() => {
     if (!translations) return; // Do nothing if translations are not loaded yet
@@ -38,25 +44,44 @@ export default function NavBar(props: any) {
     sectionsRef.current = sectionElements.filter(
       (el: any): el is HTMLDivElement => el !== null
     );
-
-    const observer = new IntersectionObserver(
-      (entries) => {
-        // Find the section that is currently intersecting
-        const visibleSection = entries.find((entry) => entry.isIntersecting);
-        if (isManualClickRef.current && visibleSection?.target.id != section) {
-          // Skip observer updates if a manual click recently occurred and not reached the section yet
-          return;
+    // if (isManualClickRef.current && !visibleSections.includes(section)) {
+    //   // Skip observer updates if a manual click recently occurred and not reached the section yet
+    //   return;
+    // }
+    // setSection(mostVisibleSection);
+    // isManualClickRef.current = false; // Reset manual click flag
+    const observer = new IntersectionObserver((entries) => {
+      entries.forEach((entry) => {
+        const id = (entry.target as HTMLElement).id;
+        const ratio = entry.intersectionRatio;
+    
+        const index = sectionVisibilities.findIndex(item => item.sectionId === id);
+        if (index !== -1) {
+          sectionVisibilities[index].visibleRatio = ratio;
+        } else {
+          sectionVisibilities.push({
+            sectionId: id,
+            visibleRatio: ratio
+          });
         }
-        if (visibleSection?.target.id) {
-          setSection(visibleSection.target.id); // Update the state
-          isManualClickRef.current = false; // Reset manual click flag
-        }
-      },
-      {
-        root: null, // Observe within the viewport
-        threshold: 0.9, // Trigger when 90% of the section is visible
+      });
+    
+      // Find the most visible section by ratio
+      const mostVisible = sectionVisibilities.reduce((max, current) =>
+        current.visibleRatio > max.visibleRatio ? current : max,
+        { sectionId: '', visibleRatio: 0 } as SectionVisibility
+      );
+      if (isManualClickRef.current && mostVisible.sectionId !== section) {
+        // Skip observer updates if a manual click recently occurred and not reached the section yet
+        return;
       }
-    );
+      if (mostVisible.sectionId !== '') {
+        setSection(mostVisible.sectionId);
+        isManualClickRef.current = false; // Reset manual click flag
+      }
+    }, {
+      threshold: Array.from({ length: 101 }, (_, i) => i / 100),
+    });
 
     // Start observing the sections
     sectionsRef.current.forEach((sectionElement) => {
@@ -86,10 +111,10 @@ export default function NavBar(props: any) {
   }
 
   return (
-    <Disclosure as="nav" className="bg-[#0A0A72] sm:sticky top-0 z-50">
-      <div className="mx-auto max-w-7xl px-2 sm:px-6 lg:px-8">
+    <Disclosure as="nav" className="bg-[#0A0A72] md:sticky top-0 z-50">
+      <div className="mx-auto max-w-7xl px-2 md:px-6 lg:px-8">
         <div className="relative flex h-16 items-center justify-between">
-          <div className="absolute inset-y-0 left-0 flex items-center sm:hidden">
+          <div className="absolute inset-y-0 left-0 flex items-center md:hidden">
             {/* Mobile menu button*/}
             <DisclosureButton onClick={() => {setIsSideBarOpen((oldValue: boolean) => !oldValue);}} className="group relative inline-flex items-center justify-center rounded-md p-2 text-bg-blue-400 hover:bg-blue-400 hover:text-white focus:ring-2 focus:ring-white focus:outline-hidden focus:ring-inset">
               <span className="absolute -inset-0.5" />
@@ -98,8 +123,8 @@ export default function NavBar(props: any) {
               <XMarkIcon aria-hidden="true" className="hidden size-6 group-data-open:block" />
             </DisclosureButton>
           </div>
-          <div className="flex flex-1 items-center justify-center sm:items-stretch">
-            <div className="hidden sm:ml-6 sm:block">
+          <div className="flex flex-1 items-center justify-center md:items-stretch">
+            <div className="hidden md:ml-6 md:block">
               <div className="flex space-x-4">
                 {navigation.map((item: any) => (
                   <div key={item.name} style={{ display: 'flex', alignItems: 'center' }}>
@@ -131,7 +156,7 @@ export default function NavBar(props: any) {
         </div>
       </div>
 
-      <DisclosurePanel className="sm:hidden">
+      <DisclosurePanel className="md:hidden">
         <div className="flex flex-col items-center space-y-1 px-2 pt-2 pb-3 h-[75vh]">
           <Image
             className="bg-blue-400  rounded-full"

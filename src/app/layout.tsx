@@ -35,8 +35,8 @@ export default function RootLayout({
         <meta name="revisit-after" content="30 days"/>
         <meta name="author" content="Domenico Gagliardo"/>
         <meta name="copyright" content="Domenico Gagliardo"/>
-        <link rel="icon" href="/favicon.ico" />
-        <link rel="apple-touch-icon" href="/apple-touch-icon.png" />
+        <link rel="icon" href="./favicon.ico" />
+        <link rel="apple-touch-icon" href="./apple-touch-icon.png" />
       </head>
       <body
         className={`${geistSans.variable} ${geistMono.variable} antialiased`}

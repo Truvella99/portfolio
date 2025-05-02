@@ -6,6 +6,7 @@ import { TranslationProvider } from "@/components/DataContext";
 import About from "@/sections/about";
 import Skills from "@/sections/skills";
 import FadeInOnScroll from "@/utils/fadein";
+import EducationAndWork from "@/sections/education";
 
 export default function App() {
   const [isSideBarOpen, setIsSideBarOpen] = useState(false);
@@ -16,6 +17,8 @@ export default function App() {
         <FadeInOnScroll><Home/></FadeInOnScroll>
         <FadeInOnScroll><About/></FadeInOnScroll>
         <FadeInOnScroll><Skills/></FadeInOnScroll>
+        <FadeInOnScroll><EducationAndWork isEducation={true}/></FadeInOnScroll>
+        <FadeInOnScroll><EducationAndWork isEducation={false}/></FadeInOnScroll>
         {Array.from({ length: 2 }, (_, i) => (
           <div key={i} className="h-screen flex items-center justify-center">
             <h1 className="text-4xl font-bold">Section {i + 1}</h1>
