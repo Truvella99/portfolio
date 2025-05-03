@@ -6,6 +6,7 @@ import IconUtility from '@/utils/icon';
 import React, { useContext, useRef, useEffect } from "react";
 import { TranslationContext } from "@/components/DataContext";
 import { useState } from "react";
+import LanguageToggle from '@/utils/languageToggle';
 
 function classNames(...classes: any) {
   return classes.filter(Boolean).join(' ')
@@ -143,12 +144,7 @@ export default function NavBar(props: any) {
                     </a>
                   </div>
                 ))}
-                {/* <IconContext.Provider value={{ size: '2em', className: "global-class-name" }}>
-                  <div style={{ display: 'flex', gap: '10px', justifyContent: 'flex-end' }}>
-                    <IconUtility Icon={FaGithub} link={'https://github.com/Truvella99'}/>
-                    <IconUtility Icon={FaLinkedin} link={'https://www.linkedin.com/in/domenico-gagliardo-3256ba229/'}/>
-                  </div>
-                </IconContext.Provider> */}
+                <LanguageToggle />
               </div>
             </div>
           </div>
@@ -185,6 +181,9 @@ export default function NavBar(props: any) {
               </DisclosureButton>
             </div>
           ))}
+          <div className='mt-2'>
+            <LanguageToggle />
+          </div>
           <div className='pt-5' style={{ display: 'flex', gap: '50px' }}>
             <IconUtility Icon={FaGithub} link={'https://github.com/Truvella99'} />
             <IconUtility Icon={FaLinkedin} link={'https://www.linkedin.com/in/domenico-gagliardo-3256ba229/'} />

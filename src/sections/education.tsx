@@ -1,70 +1,99 @@
 import { useContext } from "react";
 import { TranslationContext } from "@/components/DataContext";
-import { VerticalTimeline, VerticalTimelineElement } from 'react-vertical-timeline-component';
-import 'react-vertical-timeline-component/style.min.css';
-import { RiGraduationCapFill } from "react-icons/ri";
-import { MdOutlineWork } from "react-icons/md";
+import { motion } from 'framer-motion'
+import Image from 'next/image';
+import { useRef, useState } from "react";
 
-export default function EducationAndWork({isEducation}: {isEducation: boolean}) {
+export default function Education() {
     const translations = useContext(TranslationContext)?.translations;
     if (!translations) return null; // Handle case when translations are not yet loaded
     return (
-        <section id={isEducation ? translations.sections[3] : translations.sections[4]} className={isEducation ? "bg-[var(--secondary-background)] text-white py-16 px-8 md:px-20 flex items-center justify-center" :
-            "text-white py-16 px-8 md:px-20 flex items-center justify-center"}>
+        <section id={translations.sections[3]} className={"bg-[var(--secondary-background)] text-white py-16 px-8 md:px-20 flex items-center justify-center"}>
             <div className="min-h-[30vh] max-w-[81vw] mx-auto px-6 flex flex-col-reverse lg:flex-row items-center">
-                {isEducation ? 
                 <div>
                     <h1 className="text-blue-400 text-5xl font-bold leading-tight mb-8">{translations.education}</h1>
                     <p className="text-gray-300 mb-12 text-xl">{translations.educationDescription}</p>
-                    {/* Map through the educations */}
-                    <VerticalTimeline>
-                        {translations.educations.map((education: { [key: string]: string }, index: number) => (
-                            <VerticalTimelineElement
-                                key={index}
-                                className="vertical-timeline-element--work"
-                                contentStyle={{ background: '#51a2ff', color: '#fff' }}
-                                contentArrowStyle={{ borderRight: '7px solid  #51a2ff' }}
-                                date={education.date}
-                                iconStyle={{ background: '#51a2ff', color: '#fff' }}
-                                icon={<RiGraduationCapFill />}
-                            >
-                                <h3 className="text-xl font-bold">{education.title}</h3>
-                                <h4 className="text-lg">{education.institution}</h4>
-                                <span style={{ display: 'block' }}>{education.place}</span>
-                                <a href={education.website} target="_blank" className="mt-2 inline-block hover:underline hover:text-blue-500">
-                                    Website
-                                </a>
-                            </VerticalTimelineElement>
+                    <div className="mx-auto">
+                        {translations.educations.map((e: Education, i: number) => (
+                            <EducationCard key={i} education={e} />
                         ))}
-                    </VerticalTimeline>
-                </div> :
-                    <div>
-                        <h1 className="text-blue-400 text-5xl font-bold leading-tight mb-8">{translations.workExperience}</h1>
-                        <p className="text-gray-300 mb-12 text-xl">{translations.workExperienceDescription}</p>
-                        {/* Map through the work experiences */}
-                        <VerticalTimeline>
-                            {translations.workExperiences.map((workExperience: { [key: string]: string }, index: number) => (
-                                <VerticalTimelineElement
-                                    key={index}
-                                    className="vertical-timeline-element--work"
-                                    contentStyle={{ background: '#51a2ff', color: '#fff' }}
-                                    contentArrowStyle={{ borderRight: '7px solid  #51a2ff' }}
-                                    date={workExperience.date}
-                                    iconStyle={{ background: '#51a2ff', color: '#fff' }}
-                                    icon={<MdOutlineWork />}
-                                >
-                                    <h3 className="text-xl font-bold">{workExperience.title}</h3>
-                                    <h4 className="text-lg">{workExperience.institution}</h4>
-                                    <span style={{ display: 'block' }}>{workExperience.place}</span>
-                                    <a href={workExperience.website} target="_blank" className="mt-2 inline-block hover:underline hover:text-blue-500">
-                                        Website
-                                    </a>
-                                </VerticalTimelineElement>
-                            ))}
-                        </VerticalTimeline>
                     </div>
-                    }
+                </div>
             </div>
         </section>
     );
+}
+
+interface Education {
+    title: string
+    institution: string
+    date: string
+    place: string
+    website: string,
+    image: string
+}
+interface Position {
+    x: number;
+    y: number;
+}
+
+const EducationCard = ({ education }: { education: Education }) => {
+    const spotlightColor = "rgba(0, 229, 255, 0.2)";
+    const divRef = useRef<HTMLDivElement>(null);
+    const [applyOpacity, setApplyOpacity] = useState(false);
+    const [position, setPosition] = useState<Position>({ x: 0, y: 0 });
+
+    const handleMouseMove: React.MouseEventHandler<HTMLDivElement> = (e) => {
+        if (!divRef.current) return;
+        const rect = divRef.current.getBoundingClientRect();
+        setPosition({ x: e.clientX - rect.left, y: e.clientY - rect.top });
+    };
+
+    const handleMouseEnter = () => setApplyOpacity(true);
+    const handleMouseLeave = () => setApplyOpacity(false);
+
+    return (
+        <motion.div
+            ref={divRef}
+            onMouseMove={handleMouseMove}
+            onMouseEnter={handleMouseEnter}
+            onMouseLeave={handleMouseLeave}
+            whileHover={{
+                scale: 1.03,
+                rotate: -1,
+                y: -15,
+                boxShadow: '0px 12px 20px rgba(0,0,0,0.12)',
+                backgroundColor: 'rgba(10, 10, 114, 0.5)',
+            }}
+            style={applyOpacity ? { background: `radial-gradient(circle at ${position.x}px ${position.y}px, ${spotlightColor}, transparent 80%)` } : {}}
+            transition={{ duration: 0 }}
+            onClick={() => window.open(education.website, '_blank')}
+            initial={{ opacity: 0, y: 20 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            whileTap={{ scale: 0.97 }}
+            className="relative bg-[var(--background)] rounded-2xl p-6 mb-4 cursor-pointer transition-all shadow-md overflow-hidden"
+        >
+            <div className="relative z-10">
+                <div className="flex md:flex-row flex-col items-start">
+                    <div className="w-full md:w-50 flex-shrink-0 flex items-center justify-center">
+                        <Image
+                            src={education.image}
+                            alt=""
+                            width={200}
+                            height={133}
+                            className="w-[200px] h-[133px] object-contain"
+                        />
+                    </div>
+                    <div className="ml-5 md:mt-0 mt-5">
+                        <div>
+                            <h3 className="text-xl font-semibold text-gray-900 dark:text-white">{education.title}</h3>
+                            <p className="text-gray-600 dark:text-gray-300">{education.institution}</p>
+                        </div>
+                        <span className="text-sm text-gray-400">{education.date}</span>
+                        <p className="mt-4 text-gray-700 dark:text-gray-200">{education.place}</p>
+                    </div>
+                </div>
+            </div>
+        </motion.div>
+    )
 }

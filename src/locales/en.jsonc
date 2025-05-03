@@ -127,42 +127,48 @@
       "institution": "Politecnico di Torino",
       "date": "29/07/2023 - 11/04/2025",
       "place": "Corso Duca degli Abruzzi, 24, 10129 Torino TO, Italy",
-      "website": "https://www.polito.it/en"
+      "website": "https://www.polito.it/en",
+      "image": "./education/polito.jpg"
     },
     {
       "title": "Bachelor Degree in Computer Engineering (Grade: 110/110)",
       "institution": "University of Salerno",
       "date": "10/09/2018 - 29/09/2021",
       "place": "Via Giovanni Paolo II, 132 - 84084 Fisciano (SA), Italy",
-      "website": "https://web.unisa.it/en/university"
+      "website": "https://web.unisa.it/en/university",
+      "image": "./education/unisa.jpg"
     },
     {
       "title": "Cambridge Assessment English First Certificate in English (Cambridge English Scale: 178)",
       "institution": "Cambridge School of Sapri",
       "date": "23/10/2021 - 25/06/2022",
       "place": "Via Gianbattista Falcone, 8, 84073 Sapri SA",
-      "website": "https://www.cambridgeenglish.org/exams-and-tests/first-for-schools/"
+      "website": "https://www.cambridgeenglish.org/exams-and-tests/first-for-schools/",
+      "image": "./education/cambridge.jpeg"
     },
     {
       "title": "Diploma Administration, Finance And Marketing (Grade: 100/100th)",
       "institution": "Istituto Istruzione Superiore L. Da Vinci",
       "date": "15/09/2013 - 05/07/2018",
       "place": "Via Kennedy, 45, 84073 Sapri (SA), Italy",
-      "website": "https://www.iisdavincisapri.edu.it/"
+      "website": "https://www.iisdavincisapri.edu.it/",
+      "image": "./education/itis.jpg"
     },
     {
       "title": "Trinity Grade 6 (CEFR Level B1.2)",
       "institution": "Trinity College London",
       "date": "01/10/2015 - 31/05/2016",
       "place": "Via Kennedy, 45, 84073 Sapri (SA), Italy",
-      "website": "https://www.trinitycollege.com/"
+      "website": "https://www.trinitycollege.com/",
+      "image": "./education/trinity.jpg"
     },
     {
       "title": "ECDL Certificate",
       "institution": "A.I.C.A.",
       "date": "02/04/2014 - 22/05/2015",
       "place": "Via Kennedy, 45, 84073 Sapri (SA), Italy",
-      "website": "https://www.aicanet.it/"
+      "website": "https://www.aicanet.it/",
+      "image": "./education/ecdl.png"
     }
   ],
   // --------------------------------------- WORK EXPERIENCE SECTION ---------------------------------------
@@ -174,42 +180,48 @@
       "institution": "Politecnico di Torino",
       "date": "15/09/2024 - 15/03/2025",
       "place": "Corso Duca degli Abruzzi, 24, 10129 Torino TO, Italy",
-      "website": "https://www.polito.it/en"
+      "website": "https://www.polito.it/en",
+      "image": "./work/polito.png"
     },
     {
       "title": "Curricular Internship",
       "institution": "Integrated Engineering Studio Garofalo & Partners Srl",
       "date": "22/06/2021 - 30/07/2021",
       "place": "Corso Vittorio Emanuele, 191 193 195 - 84122 Salerno (SA), Italy",
-      "website": "http://www.garofaloandpartners.com/eng/default.aspx"
+      "website": "http://www.garofaloandpartners.com/eng/default.aspx",
+      "image": "./work/garofaloandpartners.jpg"
     },
     {
       "title": "Tourist Promoter Fair Bit Milan",
       "institution": "Cicas Tourismo",
       "date": "11/02/2018 - 13/02/2018",
       "place": "Viale Teodorico, 20149 Milan (MI), Italy",
-      "website": "https://bit.fieramilano.it/en/"
+      "website": "https://bit.fieramilano.it/en/",
+      "image": "./work/bit.png"
     },
     {
       "title": "Receptionist Miss Italia House",
       "institution": "Cicas Turismo/Gruppo Eventi",
       "date": "02/09/2017 - 09/09/2017",
       "place": "Via Sant'Antonio, 11 - 30016 Jesolo (VE), Italy",
-      "website": "https://www.missitalia.it/casamissitalia/"
+      "website": "https://www.missitalia.it/casamissitalia/",
+      "image": "./work/miss_italia.jpg"
     },
     {
       "title": "Accountant",
       "institution": "Associate Study Dr. Davide D'angelo",
       "date": "01/07/2017 - 15/08/2017",
       "place": "Via Vallebona, 11 - 84070 San Giovanni A Piro (SA), Italy",
-      "website": "https://www.facebook.com/dangelo.dd/"
+      "website": "https://www.facebook.com/dangelo.dd/",
+      "image": "./work/d_angelo.jpg"
     },
     {
       "title": "Receptionist Casa Sanremo",
       "institution": "Cicas Turismo/Gruppo Eventi",
       "date": "07/03/2017 - 13/03/2017",
       "place": "Corso Giuseppe Garibaldi, 1 - 18038 Sanremo (IM), Italy",
-      "website": "https://www.casasanremo.it/"
+      "website": "https://www.casasanremo.it/",
+      "image": "./work/sanremo.jpg"
     }
   ]
 }
