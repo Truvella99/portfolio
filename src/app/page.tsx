@@ -8,6 +8,7 @@ import Skills from "@/sections/skills";
 import FadeInOnScroll from "@/utils/fadein";
 import Education from "@/sections/education";
 import Work from "@/sections/work";
+import Projects from "@/sections/projects";
 
 export default function App() {
   const [isSideBarOpen, setIsSideBarOpen] = useState(false);
@@ -20,6 +21,7 @@ export default function App() {
         <FadeInOnScroll><Skills/></FadeInOnScroll>
         <FadeInOnScroll><Education/></FadeInOnScroll>
         <FadeInOnScroll><Work/></FadeInOnScroll>
+        <FadeInOnScroll><Projects/></FadeInOnScroll>
       </div> : ''}
     </TranslationProvider>
   );

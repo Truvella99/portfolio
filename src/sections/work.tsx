@@ -4,15 +4,7 @@ import { VerticalTimeline, VerticalTimelineElement } from 'react-vertical-timeli
 import 'react-vertical-timeline-component/style.min.css';
 import { motion } from "framer-motion";
 import Image from "next/image";
-
-interface Work {
-    title: string
-    institution: string
-    date: string
-    place: string
-    website: string,
-    image: string
-}
+import type { Work } from "../../declarations";
 
 export default function Work() {
     const translations = useContext(TranslationContext)?.translations;
@@ -41,6 +33,7 @@ export default function Work() {
                                     whileHover={{
                                         scale: 1.05,
                                         y: -6,
+                                        color: "var(--background)",
                                     }}
                                     whileTap={{ scale: 0.97 }}
                                     initial={{ opacity: 0, y: 20 }}

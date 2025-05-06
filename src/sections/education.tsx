@@ -3,6 +3,8 @@ import { TranslationContext } from "@/components/DataContext";
 import { motion } from 'framer-motion'
 import Image from 'next/image';
 import { useRef, useState } from "react";
+import type { Education } from "../../declarations";
+import { Position } from "../../declarations";
 
 export default function Education() {
     const translations = useContext(TranslationContext)?.translations;
@@ -22,19 +24,6 @@ export default function Education() {
             </div>
         </section>
     );
-}
-
-interface Education {
-    title: string
-    institution: string
-    date: string
-    place: string
-    website: string,
-    image: string
-}
-interface Position {
-    x: number;
-    y: number;
 }
 
 const EducationCard = ({ education }: { education: Education }) => {

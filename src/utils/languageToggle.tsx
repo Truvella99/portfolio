@@ -9,9 +9,9 @@ export default function LanguageToggle() {
     
     const toggleLanguage = () => {
         if (language === "en") {
-            setLanguage && setLanguage("it");
+            setLanguage?.("it");
         } else {
-            setLanguage && setLanguage("en");
+            setLanguage?.("en");
         }
     };
 

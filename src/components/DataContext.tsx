@@ -2,13 +2,7 @@
 import React, { createContext, useState, useEffect, ReactNode } from "react";
 import enJson from "@/locales/en.json";
 import itJson from "@/locales/it.json";
-
-// Define the shape of your context data
-interface TranslationContextType {
-  translations: Record<string, any> | undefined;
-  language: string;
-  setLanguage: (lang: string) => void;
-}
+import { TranslationContextType } from "../../declarations";
 
 // Create the context
 export const TranslationContext = createContext<TranslationContextType | undefined>(undefined);

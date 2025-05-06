@@ -7,6 +7,7 @@ import React, { useContext, useRef, useEffect } from "react";
 import { TranslationContext } from "@/components/DataContext";
 import { useState } from "react";
 import LanguageToggle from '@/utils/languageToggle';
+import { SectionVisibility } from '../../declarations';
 
 function classNames(...classes: any) {
   return classes.filter(Boolean).join(' ')
@@ -26,11 +27,6 @@ export default function NavBar(props: any) {
         href: `#${section}`
       }
   }) || [];
-
-  interface SectionVisibility {
-    sectionId: string;
-    visibleRatio: number;
-  }
 
   useEffect(() => {
     if (!translations) return; // Do nothing if translations are not loaded yet
@@ -112,7 +108,7 @@ export default function NavBar(props: any) {
   }
 
   return (
-    <Disclosure as="nav" className="bg-[#0A0A72] md:sticky top-0 z-50">
+    <Disclosure as="nav" className="bg-[#0A0A72] md:sticky top-0 z-8">
       <div className="mx-auto max-w-7xl px-2 md:px-6 lg:px-8">
         <div className="relative flex h-16 items-center justify-between">
           <div className="absolute inset-y-0 left-0 flex items-center md:hidden">
@@ -144,7 +140,9 @@ export default function NavBar(props: any) {
                     </a>
                   </div>
                 ))}
-                <LanguageToggle />
+                <div style={{ display: 'flex', alignItems: 'center' }}>
+                  <LanguageToggle />
+                </div>
               </div>
             </div>
           </div>

@@ -1,10 +1,5 @@
-import { IconType } from "react-icons";
 import { IconContext } from "react-icons";
-
-interface IconUtilityProps {
-    Icon: IconType;
-    link?: string;
-}
+import type { IconUtilityProps } from "../../declarations";
 
 export default function IconUtility({ Icon, link }: IconUtilityProps) {
     return (
@@ -15,9 +10,9 @@ export default function IconUtility({ Icon, link }: IconUtilityProps) {
                         cursor: 'pointer',
                         transition: 'opacity 0.3s ease', // Smooth transition when opacity changes
                     }}
-                    onMouseOver={(e) => (e.currentTarget.style.opacity = '0.5')} // Set to 50% transparency
-                    onMouseOut={(e) => (e.currentTarget.style.opacity = '1')} // Reset to fully opaque
-                    onClick={(e) => window.open(link, '_blank')} // Open a new tab
+                    onMouseOver={(e: React.MouseEvent<SVGElement, MouseEvent>) => (e.currentTarget.style.opacity = '0.5')} // Set to 50% transparency
+                    onMouseOut={(e: React.MouseEvent<SVGElement, MouseEvent>) => (e.currentTarget.style.opacity = '1')} // Reset to fully opaque
+                    onClick={(e: React.MouseEvent<SVGElement, MouseEvent>) => window.open(link, '_blank')} // Open a new tab
                 /> :
                 <Icon />
             }
