@@ -19,7 +19,7 @@ export default function ContactMe() {
     function handleSubmit(e: React.FormEvent<HTMLFormElement>) {
         e.preventDefault();
         const recaptchaValue = recaptchaRef.current!.getValue();
-        let errors = { name: '', email: '', subject: '', message: '', recaptcha: '' };
+        const errors = { name: '', email: '', subject: '', message: '', recaptcha: '' };
         // ---------------- FORM VALIDATION ----------------
         if (name.value === '') {
             setName((obj) => ({ ...obj, error: "Please enter your name." }));
