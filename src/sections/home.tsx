@@ -1,4 +1,4 @@
-import IconUtility from "@/utils/icon";
+import IconUtility from "@/components/icon";
 import { FaGithub, FaLinkedin } from "react-icons/fa";
 import { TypeAnimation } from 'react-type-animation';
 import { useContext } from "react";

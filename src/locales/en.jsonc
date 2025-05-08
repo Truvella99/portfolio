@@ -326,7 +326,14 @@
       "image": "./projects/portfolio.png",
       "link": "https://github.com/Truvella99/pds_project"
     }
-  ]
+  ],
+  // --------------------------------------- CONTACT ME SECTION ---------------------------------------
+  "contactMe": "Contact Me",
+  "formName": "Name",
+  "formEmail": "Email",
+  "formSubject": "Subject",
+  "formMessage": "Message",
+  "formSubmit": "Submit"
 }
 
 /*

@@ -65,7 +65,7 @@ interface Project {
 
 interface ProjectCardProps {
     setOpen: (isOpen: boolean) => void;
-    project: Project | null;
+    project: Project;
     setProject: (project: Project | null) => void;
 }
 

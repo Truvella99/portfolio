@@ -2,11 +2,11 @@ import { Disclosure, DisclosureButton, DisclosurePanel } from '@headlessui/react
 import { Bars3Icon, XMarkIcon } from '@heroicons/react/24/outline'
 import Image from "next/image";
 import { FaGithub, FaLinkedin } from "react-icons/fa";
-import IconUtility from '@/utils/icon';
+import IconUtility from '@/components/icon';
 import React, { useContext, useRef, useEffect } from "react";
 import { TranslationContext } from "@/components/DataContext";
 import { useState } from "react";
-import LanguageToggle from '@/utils/languageToggle';
+import LanguageToggle from '@/components/languageToggle';
 import { SectionVisibility } from '../../declarations';
 
 function classNames(...classes: any) {
@@ -41,12 +41,7 @@ export default function NavBar(props: any) {
     sectionsRef.current = sectionElements.filter(
       (el: any): el is HTMLDivElement => el !== null
     );
-    // if (isManualClickRef.current && !visibleSections.includes(section)) {
-    //   // Skip observer updates if a manual click recently occurred and not reached the section yet
-    //   return;
-    // }
-    // setSection(mostVisibleSection);
-    // isManualClickRef.current = false; // Reset manual click flag
+   
     const observer = new IntersectionObserver((entries) => {
       entries.forEach((entry) => {
         const id = (entry.target as HTMLElement).id;
@@ -108,7 +103,7 @@ export default function NavBar(props: any) {
   }
 
   return (
-    <Disclosure as="nav" className="bg-[#0A0A72] md:sticky top-0 z-8">
+    <Disclosure as="nav" className="bg-[#0A0A72] md:sticky top-0 z-80">
       <div className="mx-auto max-w-7xl px-2 md:px-6 lg:px-8">
         <div className="relative flex h-16 items-center justify-between">
           <div className="absolute inset-y-0 left-0 flex items-center md:hidden">

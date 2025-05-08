@@ -1,5 +1,4 @@
 import React from 'react';
-import Image from 'next/image';
 import { useContext } from "react";
 import { TranslationContext } from "@/components/DataContext";
 import { DotLottieReact } from '@lottiefiles/dotlottie-react';
@@ -26,7 +25,7 @@ export default function About() {
                 {/* LEFT: IMAGE */}
                 <div className="min-h-[50vh] sm:min-h-[60vh] md:min-h-[70vh] relative flex flex-col items-center">
                     <DotLottieReact
-                        src="./animation.lottie"
+                        src="./homeAnimation.lottie"
                         loop
                         className="h-[400px] w-[300px] sm:h-[500px] sm:w-[400px] md:h-[600px] md:w-[450px] lg:h-[700px] lg:w-[500px] object-cover object-center rounded-lg"
                         autoplay

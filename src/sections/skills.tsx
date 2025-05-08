@@ -1,7 +1,6 @@
 import { useContext } from "react";
 import { TranslationContext } from "@/components/DataContext";
-import { motion } from "framer-motion";
-import { SkillUtilityProps } from "../../declarations";
+import SkillUtility from "@/components/skill";
 
 export default function Skills() {
     const translations = useContext(TranslationContext)?.translations;
@@ -25,25 +24,5 @@ export default function Skills() {
                 </div>                
             </div>
         </section>
-    );
-}
-
-function SkillUtility({ icon, link }: SkillUtilityProps) {
-    const box = { width: 50, height: 50, borderRadius: 5};
-
-    return (
-        <motion.div whileHover={{ scale: 1.2 }} whileTap={{ scale: 0.8 }} style={box}>
-            <svg width={box.width} height={box.height} 
-                style={{
-                    cursor: 'pointer',
-                    // transition: 'opacity 0.3s ease', // Smooth transition when opacity changes
-                }}
-                // onMouseOver={(e) => (e.currentTarget.style.opacity = '0.5')} // Set to 50% transparency
-                // onMouseOut={(e) => (e.currentTarget.style.opacity = '1')} // Reset to fully opaque
-                onClick={() => window.open(link, '_blank')} // Open a new tab
-            >
-                <image href={`./skills/${icon}.svg`} />
-            </svg>
-        </motion.div>
     );
 }

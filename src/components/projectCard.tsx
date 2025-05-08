@@ -51,7 +51,7 @@ export default function ProjectCard({ setOpen, project, setProject }: ProjectCar
                 transformStyle: "preserve-3d",
                 transform,
             }}
-            className="relative md:h-[216px] md:w-[384px] h-[169px] w-[300px] rounded-xl bg-gradient-to-br from-[var(--background)] to-[var(--secondary-background)]"
+            className="relative md:h-[216px] md:w-[384px] sm:w-[312px] sm:h-[176px] h-[135px] w-[240px] rounded-xl bg-gradient-to-br from-[var(--background)] to-[var(--secondary-background)]"
         >
             <div
                 style={{
@@ -61,7 +61,7 @@ export default function ProjectCard({ setOpen, project, setProject }: ProjectCar
                 className="absolute inset-4 grid place-content-center rounded-xl bg-[#51a2ff] shadow-lg overflow-hidden group"
             >
                 <Image
-                    src="/profile-img.png"
+                    src={project.image}
                     alt="Card Image"
                     fill
                     className="object-cover"

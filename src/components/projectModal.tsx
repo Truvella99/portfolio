@@ -5,6 +5,7 @@ import { FaCode } from "react-icons/fa"
 import { ProjectModalProps } from '../../declarations'
 import { motion, AnimatePresence } from 'framer-motion';
 import Image from 'next/image'
+import { isMobile } from '@/utils/isMobile'
 
 const processString = (str: string) => {
   const regex = /<a href='([^']+)' target='_blank'>([^<]+)<\/a>/g;
@@ -85,7 +86,7 @@ export default function ProjectModal({
   return (
     <Transition show={open} as={Fragment}>
       <Dialog as="div" className="relative z-10" onClose={setOpen}>
-        <DialogBackdrop className="fixed inset-0 bg-black/60 transition-opacity" />
+        <DialogBackdrop className="fixed inset-0 bg-black/80 transition-opacity" />
 
         <div className="fixed inset-0 z-20 w-screen h-screen overflow-y-auto">
           <div className="flex h-full w-full items-center justify-center p-0">
@@ -126,7 +127,7 @@ export default function ProjectModal({
                 {/* Close button */}
                 <div className="absolute right-4 top-4 text-white hover:text-gray-500 cursor-pointer z-30">
                   <IoCloseSharp
-                    size={24}
+                    size={isMobile() ? 18 : 24}
                     onClick={() => {
                       setOpen(false)
                       setProject(null)
@@ -134,7 +135,7 @@ export default function ProjectModal({
                   />
                 </div>
 
-                {/* Code Button */}
+                {/* Code Button 
                 <div
                   onClick={() => window.open(project?.link, '_blank')}
                   className="absolute right-5 bottom-2 flex items-center space-x-2 bg-[#51a2ff] rounded-full p-2 cursor-pointer z-10"
@@ -142,6 +143,7 @@ export default function ProjectModal({
                   <span className="text-sm text-black font-semibold">Code</span>
                   <FaCode className="text-black/60" size={20} />
                 </div>
+                */}
 
                 {/* Modal Content */}
                 <AnimatePresence mode="wait">
@@ -154,7 +156,7 @@ export default function ProjectModal({
                     className="h-full px-6 pt-6 pb-4 flex flex-col items-center space-y-6 overflow-auto"
                   >
                     <Image
-                      src="./profile-img.png"
+                      src={(project?.image) ? project.image : ''}
                       alt="Illustration"
                       width={300}
                       height={300}

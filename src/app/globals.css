@@ -36,3 +36,13 @@ html {
     scroll-padding-top: 4rem;
   }
 }
+
+/* SWEET ALERTS CUSTOM CSS */
+
+.custom-swal-popup { @apply bg-[var(--secondary-background)] rounded-lg shadow-lg; }
+
+.custom-swal-title { @apply text-white; }
+
+.confirm-btn { @apply bg-blue-400 text-white px-4 py-2 rounded hover:bg-blue-600; }
+
+.error-btn { @apply bg-red-400 text-white px-4 py-2 rounded hover:bg-red-600; }
