@@ -8,6 +8,8 @@ import { TranslationContext } from "@/components/DataContext";
 import { useState } from "react";
 import LanguageToggle from '@/components/languageToggle';
 import { SectionVisibility } from '../../declarations';
+import ThemeToggle from './themeToggle';
+import { isMobile } from '@/utils/isMobile';
 
 function classNames(...classes: any) {
   return classes.filter(Boolean).join(' ')
@@ -135,13 +137,13 @@ export default function NavBar(props: any) {
                     </a>
                   </div>
                 ))}
-                <div style={{ display: 'flex', alignItems: 'center' }}>
-                  <LanguageToggle />
-                </div>
               </div>
             </div>
           </div>
-  
+          <div className="ml-auto flex items-center gap-1">
+            <LanguageToggle />
+            <ThemeToggle />
+          </div>
         </div>
       </div>
 
@@ -174,10 +176,7 @@ export default function NavBar(props: any) {
               </DisclosureButton>
             </div>
           ))}
-          <div className='mt-2'>
-            <LanguageToggle />
-          </div>
-          <div className='pt-5' style={{ display: 'flex', gap: '50px' }}>
+          <div className='mt-2 pb-2' style={{ display: 'flex', gap: '50px' }}>
             <IconUtility Icon={FaGithub} link={'https://github.com/Truvella99'} />
             <IconUtility Icon={FaLinkedin} link={'https://www.linkedin.com/in/domenico-gagliardo-3256ba229/'} />
           </div>

@@ -22,32 +22,32 @@ export default function ContactMe() {
         const errors = { name: '', email: '', subject: '', message: '', recaptcha: '' };
         // ---------------- FORM VALIDATION ----------------
         if (name.value === '') {
-            setName((obj) => ({ ...obj, error: "Please enter your name." }));
-            errors.name = "Please enter your name.";
+            setName((obj) => ({ ...obj, error: translations?.formNameError }));
+            errors.name = translations?.formNameError;
         } else {
             setName((obj) => ({ ...obj, error: "" }));
         }
         if (!validate(email.value)) {
-            setEmail((obj) => ({ ...obj, error: "Please enter a valid email." }));
-            errors.email = "Please enter a valid email.";
+            setEmail((obj) => ({ ...obj, error: translations?.formEmailError }));
+            errors.email = translations?.formEmailError;
         } else {
             setEmail((obj) => ({ ...obj, error: "" }));
         }
         if (subject.value === '') {
-            setSubject((obj) => ({ ...obj, error: "Please enter a subject." }));
-            errors.subject = "Please enter a subject.";
+            setSubject((obj) => ({ ...obj, error: translations?.formSubjectError }));
+            errors.subject = translations?.formSubjectError;
         } else {
             setSubject((obj) => ({ ...obj, error: "" }));
         }
         if (message.value === '') {
-            setMessage((obj) => ({ ...obj, error: "Please enter a message." }));
-            errors.message = "Please enter a message.";
+            setMessage((obj) => ({ ...obj, error: translations?.formMessageError }));
+            errors.message = translations?.formMessageError;
         } else {
             setMessage((obj) => ({ ...obj, error: "" }));
         }
         if (recaptchaValue === '') {
-            setRecaptchaError("Please complete the reCAPTCHA.");
-            errors.recaptcha = "Please complete the reCAPTCHA.";
+            setRecaptchaError(translations?.captchaError);
+            errors.recaptcha = translations?.captchaError;
         } else {
             setRecaptchaError("");
         }
@@ -72,7 +72,7 @@ export default function ContactMe() {
             .then(() => {
                 Swal.fire({
                     icon: "success",
-                    title: "Email sent successfully!",
+                    title: translations?.alertSuccess,
                     buttonsStyling: false,
                     customClass: {
                         popup: 'custom-swal-popup',
@@ -90,7 +90,7 @@ export default function ContactMe() {
             .catch(() => {
                 Swal.fire({
                     icon: "error",
-                    title: "Error in Sending the Email, please try again later.",
+                    title: translations?.alertError,
                     buttonsStyling: false,
                     customClass: {
                         popup: 'custom-swal-popup',
@@ -124,7 +124,7 @@ export default function ContactMe() {
                                 <input
                                     type="text"
                                     name="name"
-                                    placeholder="Name"
+                                    placeholder={translations.formName}
                                     value={name.value}
                                     onChange={(e) => setName((obj) => ({ ...obj, value: e.target.value }))}
                                     className="mt-1 w-full px-4 py-2 border border-gray-600 rounded-md shadow-sm focus:outline-none focus:ring-2 focus:ring-blue-400 focus:border-blue-400"
@@ -140,7 +140,7 @@ export default function ContactMe() {
                                 <input
                                     type="text"
                                     name="email"
-                                    placeholder="Email"
+                                    placeholder={translations.formEmail}
                                     value={email.value}
                                     onChange={(e) => setEmail((obj) => ({ ...obj, value: e.target.value }))}
                                     className="mt-1 w-full px-4 py-2 border border-gray-600 rounded-md shadow-sm focus:outline-none focus:ring-2 focus:ring-blue-400 focus:border-blue-400"
@@ -159,7 +159,7 @@ export default function ContactMe() {
                             <input
                                 type="text"
                                 name="subject"
-                                placeholder="Subject"
+                                placeholder={translations.formSubject}
                                 value={subject.value}
                                 onChange={(e) => setSubject((obj) => ({ ...obj, value: e.target.value }))}
                                 className="mt-1 w-full px-4 py-2 border border-gray-600 rounded-md shadow-sm focus:outline-none focus:ring-2 focus:ring-blue-400 focus:border-blue-400"
@@ -176,7 +176,7 @@ export default function ContactMe() {
                         <div>
                             <textarea
                                 name="message"
-                                placeholder="Write your message here..."
+                                placeholder={translations.formMessage}
                                 value={message.value}
                                 onChange={(e) => setMessage((obj) => ({ ...obj, value: e.target.value }))}
                                 rows={5}
@@ -193,9 +193,10 @@ export default function ContactMe() {
                         <div className="flex flex-col items-center md:mt-5">
                             <div className="relative">
                                 <ReCAPTCHA
+                                    key={translations.captcha}
                                     ref={recaptchaRef}
                                     theme="light"
-                                    // hl="it" hl="en"
+                                    hl={translations.captcha}
                                     sitekey="6LeISjcfAAAAAByM4oJ4NqWQdgZJInbxUEruoGCD"
                                 />
                                 <p
@@ -213,7 +214,7 @@ export default function ContactMe() {
                                 type="submit"
                                 className="py-2 px-4 bg-blue-400 hover:bg-blue-600 text-white font-semibold rounded-md"
                             >
-                                Send Message
+                                {translations.formSubmit}
                             </button>
                         </div>
                     </form>

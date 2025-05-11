@@ -341,5 +341,7 @@
   "captchaError": "Completa il reCAPTCHA.",
   "formSubmit": "Submit",
   "alertSuccess": "Email inviata con successo!",
-  "alertError": "Errore nell'invio dell' Email, per favore prova più tardi."
+  "alertError": "Errore nell'invio dell' Email, per favore prova più tardi.",
+  // --------------------------------------- FOOTER SECTION ---------------------------------------,
+  "allrights": "Tutti i Diritti Riservati."
 }

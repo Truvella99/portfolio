@@ -341,7 +341,9 @@
   "captchaError": "Please complete the reCAPTCHA.",
   "formSubmit": "Submit",
   "alertSuccess": "Email sent successfully!",
-  "alertError": "Error in Sending the Email, please try again later."
+  "alertError": "Error in Sending the Email, please try again later.",
+  // --------------------------------------- FOOTER SECTION ---------------------------------------,
+  "allrights": "All rights reserved."
 }
 
 /*

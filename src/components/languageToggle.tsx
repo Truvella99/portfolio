@@ -1,38 +1,42 @@
 import React, { useState } from "react";
 import { useContext } from "react";
 import { TranslationContext } from "@/components/DataContext";
-import Image from "next/image";
+import { IoLanguage } from "react-icons/io5";
+import { isMobile } from "@/utils/isMobile";
 
 export default function LanguageToggle() {
     const language = useContext(TranslationContext)?.language;
     const setLanguage = useContext(TranslationContext)?.setLanguage;
-    
-    const toggleLanguage = () => {
+    const [openDropDown, setOpenDropDown] = useState(false);
+
+    /*const toggleLanguage = () => {
         if (language === "en") {
             setLanguage?.("it");
         } else {
             setLanguage?.("en");
         }
+    };*/
+    const toggleLanguage = (lang: string) => {
+        setLanguage?.(lang);
+        setOpenDropDown(false);
     };
 
     return (
-        <button
-            onClick={toggleLanguage}
-            style={{ backgroundColor: "#51a2ff" }}
-            className={`relative w-16 h-9 rounded-full bg-gray-300 transition-colors duration-300 bg-#51a2ff`}
-        >
-            <div
-                className={`absolute top-1 left-1 w-7 h-7 rounded-full bg-white shadow-md transform transition-transform duration-300 ${language === "it" ? "translate-x-7" : ""
-                    }`}
-            >
-                <Image
-                    src={language === "en" ? "./english.png" : "/italian.png"}
-                    alt={language === "en" ? "English" : "Italian"}
-                    className="w-full h-full object-cover rounded-full transform scale-90"
-                    width={25}
-                    height={25}
-                /> 
+        <div className="relative w-[80px] flex align-center justify-center">
+            <div onClick={() => setOpenDropDown((oldValue) => !oldValue)} className={`p-1.5 md:ml-auto ${openDropDown ? 'bg-[#51a2ff]' : 'bg-transparent'} hover:bg-[#51a2ff] rounded-full text-white cursor-pointer`}>
+                <IoLanguage size={isMobile() ? 18 : 24} />
             </div>
-        </button>
+            
+            <div className={`absolute z-10 mt-10 ${openDropDown ? '' : 'hidden'} bg-[#51a2ff] rounded-lg`}>
+                <ul className="py-2 text-sm" aria-labelledby="dropdownDefaultButton">
+                    <li>
+                        <a onClick={() => toggleLanguage('it')} className="block px-4 py-2 bg-[#51a2ff] cursor-pointer">Italian</a>
+                    </li>
+                    <li>
+                        <a onClick={() => toggleLanguage('en')} className="block px-4 py-2 bg-[#51a2ff] cursor-pointer">English</a>
+                    </li>
+                </ul>
+            </div>
+        </div>
     );
 };
