@@ -120,12 +120,12 @@
   },
   // --------------------------------------- EDUCATION SECTION ---------------------------------------
   "education": "Education",
-  "educationDescription": "My training begins with a diploma in Administration, Finance and Marketing, which allowed me to do different work experiences, and then continue with a degree in Computer Engineering. The latter ended with an additional curricular internship experience, in which I developed an Android application that was the subject of my thesis.",
+  "educationDescription": "Graduated with a Master's degree in Computer Engineering, specializing in Artificial Intelligence and Data Analytics from Politecnico di Torino. Previously earned a Bachelor's degree in Computer Engineering from the University of Salerno. My academic path is also enriched by language and digital skills certifications.",
   "educations": [
     {
       "title": "Master's degree, Computer Engineering, Artificial Intelligence and Data Analytics (Grade: 110L/110)",
       "institution": "Politecnico di Torino",
-      "date": "29/07/2023 - 11/04/2025",
+      "date": "29/07/2022 - 11/04/2025",
       "place": "Corso Duca degli Abruzzi, 24, 10129 Torino TO, Italy",
       "website": "https://www.polito.it/en",
       "image": "./education/polito.jpg"
@@ -173,7 +173,7 @@
   ],
   // --------------------------------------- WORK EXPERIENCE SECTION ---------------------------------------
   "workExperience": "Work Experiences",
-  "workExperienceDescription": "I have had the opportunity to work in various companies, where I have gained valuable experience in software development and project management. I am always looking for new challenges and opportunities to grow professionally.",
+  "workExperienceDescription": "I am able to combine my technical knowledge with communication and interpersonal abilities, gained through practical and high school experiences. These experiences have helped me develop the ability to work effectively in a team.",
   "workExperiences": [
     {
       "title": "Curricular Internship",
@@ -193,7 +193,7 @@
     },
     {
       "title": "Tourist Promoter Fair Bit Milan",
-      "institution": "Cicas Tourismo",
+      "institution": "Cicas Turismo",
       "date": "11/02/2018 - 13/02/2018",
       "place": "Viale Teodorico, 20149 Milan (MI), Italy",
       "website": "https://bit.fieramilano.it/en/",

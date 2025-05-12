@@ -119,23 +119,23 @@
       "word": "https://www.microsoft.com/it-it/microsoft-365/word"
     },
     // --------------------------------------- EDUCATION SECTION ---------------------------------------
-    "education": "Education",
-    "educationDescription": "My training begins with a diploma in Administration, Finance and Marketing, which allowed me to do different work experiences, and then continue with a degree in Computer Engineering. The latter ended with an additional curricular internship experience, in which I developed an Android application that was the subject of my thesis.",
+    "education": "Formazione",
+    "educationDescription": "Laureato in Ingegneria Informatica con specializzazione in Intelligenza Artificiale e Data Analytics presso il Politecnico di Torino. In precedenza ho conseguito una laurea in ingegneria informatica presso l'Università di Salerno. Il mio percorso accademico è inoltre arricchito da certificazioni di competenze linguistiche e digitali.",
     "educations": [
       {
-        "title": "Master's degree, Computer Engineering, Artificial Intelligence and Data Analytics (Grade: 110L/110)",
+        "title": "Laurea Magistrale, Ingegneria Informatica, Artificial Intelligence and Data Analytics (Voto: 110L/110)",
         "institution": "Politecnico di Torino",
-        "date": "29/07/2023 - 11/04/2025",
-        "place": "Corso Duca degli Abruzzi, 24, 10129 Torino TO, Italy",
-        "website": "https://www.polito.it/en",
+        "date": "29/07/2022 - 11/04/2025",
+        "place": "Corso Duca degli Abruzzi, 24, 10129 Torino TO, Italia",
+        "website": "https://www.polito.it/",
         "image": "./education/polito.jpg"
       },
       {
-        "title": "Bachelor Degree in Computer Engineering (Grade: 110/110)",
-        "institution": "University of Salerno",
+        "title": "Laurea Triennale, Ingegneria Informatica (Voto: 110/110)",
+        "institution": "Università di Salerno",
         "date": "10/09/2018 - 29/09/2021",
-        "place": "Via Giovanni Paolo II, 132 - 84084 Fisciano (SA), Italy",
-        "website": "https://web.unisa.it/en/university",
+        "place": "Via Giovanni Paolo II, 132 - 84084 Fisciano (SA), Italia",
+        "website": "https://web.unisa.it/",
         "image": "./education/unisa.jpg"
       },
       {
@@ -143,14 +143,14 @@
         "institution": "Cambridge School of Sapri",
         "date": "23/10/2021 - 25/06/2022",
         "place": "Via Gianbattista Falcone, 8, 84073 Sapri SA",
-        "website": "https://www.cambridgeenglish.org/exams-and-tests/first-for-schools/",
+        "website": "https://www.cambridgeenglish.org/it/exams-and-tests/first-for-schools/",
         "image": "./education/cambridge.jpeg"
       },
       {
-        "title": "Diploma Administration, Finance And Marketing (Grade: 100/100th)",
+        "title": "Diploma Amministrazione, Finanza E Marketing (Voto: 100/100esimi)",
         "institution": "Istituto Istruzione Superiore L. Da Vinci",
         "date": "15/09/2013 - 05/07/2018",
-        "place": "Via Kennedy, 45, 84073 Sapri (SA), Italy",
+        "place": "Via Kennedy, 45, 84073 Sapri (SA), Italia",
         "website": "https://www.iisdavincisapri.edu.it/",
         "image": "./education/itis.jpg"
       },
@@ -158,60 +158,60 @@
         "title": "Trinity Grade 6 (CEFR Level B1.2)",
         "institution": "Trinity College London",
         "date": "01/10/2015 - 31/05/2016",
-        "place": "Via Kennedy, 45, 84073 Sapri (SA), Italy",
+        "place": "Via Kennedy, 45, 84073 Sapri (SA), Italia",
         "website": "https://www.trinitycollege.com/",
         "image": "./education/trinity.jpg"
       },
       {
-        "title": "ECDL Certificate",
+        "title": "Certificato ECDL",
         "institution": "A.I.C.A.",
         "date": "02/04/2014 - 22/05/2015",
-        "place": "Via Kennedy, 45, 84073 Sapri (SA), Italy",
+        "place": "Via Kennedy, 45, 84073 Sapri (SA), Italia",
         "website": "https://www.aicanet.it/",
         "image": "./education/ecdl.png"
       }
     ],
     // --------------------------------------- WORK EXPERIENCE SECTION ---------------------------------------
-    "workExperience": "Work Experiences",
-    "workExperienceDescription": "I have had the opportunity to work in various companies, where I have gained valuable experience in software development and project management. I am always looking for new challenges and opportunities to grow professionally.",
+    "workExperience": "Esperienze Lavorative",
+    "workExperienceDescription": "Sono in grado di combinare le mie conoscenze tecniche con capacità comunicative e interpersonali, acquisite attraverso esperienze pratiche e scolastiche. Queste esperienze mi hanno anche aiutato a sviluppare la capacità di lavorare efficacemente in un team.",
     "workExperiences": [
       {
-        "title": "Curricular Internship",
+        "title": "Tirocinio Curriculare",
         "institution": "Politecnico di Torino",
         "date": "15/09/2024 - 15/03/2025",
-        "place": "Corso Duca degli Abruzzi, 24, 10129 Torino TO, Italy",
-        "website": "https://www.polito.it/en",
+        "place": "Corso Duca degli Abruzzi, 24, 10129 Torino TO, Italia",
+        "website": "https://www.polito.it/",
         "image": "./work/polito.png"
       },
       {
-        "title": "Curricular Internship",
-        "institution": "Integrated Engineering Studio Garofalo & Partners Srl",
+        "title": "Tirocinio Curriculare",
+        "institution": "Studio Ingegneria Integrata Garofalo & Partners Srl",
         "date": "22/06/2021 - 30/07/2021",
-        "place": "Corso Vittorio Emanuele, 191 193 195 - 84122 Salerno (SA), Italy",
-        "website": "http://www.garofaloandpartners.com/eng/default.aspx",
+        "place": "Corso Vittorio Emanuele, 191 193 195 - 84122 Salerno (SA), Italia",
+        "website": "http://www.garofaloandpartners.com/ita/default.aspx",
         "image": "./work/garofaloandpartners.jpg"
       },
       {
-        "title": "Tourist Promoter Fair Bit Milan",
-        "institution": "Cicas Tourismo",
+        "title": "Promotore turistico Fiera Bit Milano",
+        "institution": "Cicas Turismo",
         "date": "11/02/2018 - 13/02/2018",
-        "place": "Viale Teodorico, 20149 Milan (MI), Italy",
-        "website": "https://bit.fieramilano.it/en/",
+        "place": "Viale Teodorico, 20149 Milan (MI), Italia",
+        "website": "https://bit.fieramilano.it/",
         "image": "./work/bit.png"
       },
       {
-        "title": "Receptionist Miss Italia House",
+        "title": "Receptionist Casa Miss Italia",
         "institution": "Cicas Turismo/Gruppo Eventi",
         "date": "02/09/2017 - 09/09/2017",
-        "place": "Via Sant'Antonio, 11 - 30016 Jesolo (VE), Italy",
+        "place": "Via Sant'Antonio, 11 - 30016 Jesolo (VE), Italia",
         "website": "https://www.missitalia.it/casamissitalia/",
         "image": "./work/miss_italia.jpg"
       },
       {
-        "title": "Accountant",
-        "institution": "Associate Study Dr. Davide D'angelo",
+        "title": "Contabile",
+        "institution": "Studio Associato Dr. Davide D'angelo",
         "date": "01/07/2017 - 15/08/2017",
-        "place": "Via Vallebona, 11 - 84070 San Giovanni A Piro (SA), Italy",
+        "place": "Via Vallebona, 11 - 84070 San Giovanni A Piro (SA), Italia",
         "website": "https://www.facebook.com/dangelo.dd/",
         "image": "./work/d_angelo.jpg"
       },
@@ -219,15 +219,15 @@
         "title": "Receptionist Casa Sanremo",
         "institution": "Cicas Turismo/Gruppo Eventi",
         "date": "07/03/2017 - 13/03/2017",
-        "place": "Corso Giuseppe Garibaldi, 1 - 18038 Sanremo (IM), Italy",
+        "place": "Corso Giuseppe Garibaldi, 1 - 18038 Sanremo (IM), Italia",
         "website": "https://www.casasanremo.it/",
         "image": "./work/sanremo.jpg"
       }
     ],
     // --------------------------------------- PROJECTS SECTION ---------------------------------------
-    "project": "Projects",
+    "project": "Progetti",
     "categories": [
-      "All",
+      "Tutto",
       "Mobile",
       "Web",
       "Software",

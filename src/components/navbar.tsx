@@ -150,7 +150,6 @@ export default function NavBar(props: any) {
       <DisclosurePanel className="md:hidden">
         <div className="flex flex-col items-center space-y-1 px-2 pt-2 pb-3 h-[75vh]">
           <Image
-            className="bg-blue-400  rounded-full"
             src="./profile-img.png"
             alt="Profile Image"
             width={180}

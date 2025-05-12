@@ -16,8 +16,8 @@ export default function Home() {
     if (!translations) return null; // Handle case when translations are not yet loaded
     
     return (
-        <section id={translations.sections[0]} className="text-white min-h-screen flex items-center justify-center">
-            <div className="container max-w-8xl mx-auto px-6 flex flex-col-reverse lg:flex-row items-center">
+        <section id={translations.sections[0]} className="text-white h-screen">
+            <div className="container lg:h-full max-w-8xl mx-auto px-6 flex flex-col-reverse lg:flex-row items-center justify-center">
                 {/* Social Icons */}
                 <div className="md:flex hidden lg:flex-col flex-row gap-4 lg:absolute right-6 top-1/2 transform -translate-y-1/2 mt-15">
                     <IconUtility Icon={FaLinkedin} link={'https://www.linkedin.com/in/domenico-gagliardo-3256ba229/'} />
@@ -54,7 +54,7 @@ export default function Home() {
                     <Image 
                         src="./profile-img.png"
                         alt={translations.name} 
-                        className="bg-blue-400 rounded-full h-auto max-h-[400px] md:max-h-[500px] xl:max-h-[580px] w-auto shadow-lg"
+                        className="bg-transparent h-auto max-h-[480px] md:max-h-[580px] xl:max-h-[660px] w-auto"
                         width={500}
                         height={500}
                     />

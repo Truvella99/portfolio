@@ -1,4 +1,4 @@
-import { useContext, useState } from "react";
+import { useContext, useEffect, useState } from "react";
 import { TranslationContext } from "@/components/DataContext";
 import ProjectsTabs from "@/components/projectTabs";
 import ProjectCard from "@/components/projectCard";
@@ -10,10 +10,13 @@ export default function Projects() {
     const [activeTab, setActiveTab] = useState(""); // Default to an empty string
     const [open, setOpen] = useState(false); // State to control project modal visibility
     const [project, setProject] = useState<Project | null>(null); // State to hold the selected project
-
-    if (translations && !activeTab) {
-        setActiveTab(translations.categories[0]);
-    }
+    // Set the active tab to the first category when translations are loaded and for each language change
+    useEffect(() => {
+        if (translations) {
+            setActiveTab(translations.categories[0]);
+        }
+    }, [translations]);
+    
     if (!translations) return null; // Handle case when translations are not yet loaded
 
     function filterByTabCategory() : Project[] {
