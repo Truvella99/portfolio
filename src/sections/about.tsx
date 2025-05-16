@@ -1,6 +1,6 @@
 import React from 'react';
 import { useContext } from "react";
-import { TranslationContext } from "@/components/DataContext";
+import { Translation_Theme_Context } from "@/components/Provider";
 import { DotLottieReact } from '@lottiefiles/dotlottie-react';
 
 function computeAge(dateString: string): number {
@@ -15,7 +15,7 @@ function computeAge(dateString: string): number {
 }
 
 export default function About() {
-    const translations = useContext(TranslationContext)?.translations;
+    const translations = useContext(Translation_Theme_Context)?.translations;
     if (!translations) return null; // Handle case when translations are not yet loaded
 
     return (

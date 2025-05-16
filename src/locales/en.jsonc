@@ -33,7 +33,7 @@
   "skillsDescription": "During my studies and also for personal interest, I developed knowledge of different programming languages, software and frameworks that led to my professional growth.",
   "technicalSkills": {
     "android": "https://www.android.com/intl/en_us/",
-    "androidstudio": "https://developer.android.com/studio",
+    "androidstudio": "https://developer.android.com/studio?hl=en",
     "api": "https://en.wikipedia.org/wiki/API",
     "assembly": "https://en.wikipedia.org/wiki/Assembly_language",
     "azure": "https://azure.microsoft.com/en-us/",
@@ -236,95 +236,140 @@
   ],
   "projects": [
     {
-      "id": "Portfolio",
+      "id": 1,
+      "name": "Portfolio",
       "category": "Web",
-      "description": "Website, Representing the Personal Portfolio, created via the IDE <a href='https://code.visualstudio.com/' target='_blank'>Visual Studio Code</a> from a <a href='https://bootstrapmade.com/iportfolio-bootstrap-portfolio-websites-template/' target='_blank'>Template</a> already existing and enriched with additional features.",
+      "description": "Website, Representing the Personal Portfolio, built from scratch with the <a href='https://code.visualstudio.com/' target='_blank'>Visual Studio Code</a> IDE, using <a href='https://nextjs.org/' target='_blank'>Next.JS</a> as framework, <a href='https://tailwindcss.com/' target='_blank'>Tailwind CSS</a> for styling and <a href='https://www.typescriptlang.org/' target='_blank'>Typescript</a> as main programming language. As hosting platform, <a href='https://pages.github.com/' target='_blank'>Github pages</a> has been employed by leveraging on <a href='https://github.com/features/actions' target='_blank'>Github Actions</a>.",
       "image": "./projects/portfolio.png",
-      "link": "https://truvella99.github.io/portfolio/"
+      "link": "https://github.com/Truvella99/portfolio"
     },
     {
-      "id": "Thesis_Android_App",
+      "id": 2,
+      "name": "Geofencing Android App",
       "category": "Mobile",
-      "description": "Implementation of an Android App To Manage Geofencing Logics for Territorial Promotion Purposes. It was built in <a href='https://www.java.com/en/' target='_blank'>Java</a>/<a href='https://www.w3.org/XML/' target='_blank'>XML</a>, using the IDE <a href='https://developer.android.com/studio' target='_blank'>Android Studio</a> and the <a href='https://developers.google.com/maps/documentation/android-sdk/overview' target='_blank'>Maps SDK for Android APIs</a> provided by Google Cloud.",
-      "image": "./projects/portfolio.png",
+      "description": "Implementation of an Android App To Manage Geofencing Logics for Territorial Promotion Purposes. It was built in <a href='https://www.java.com/en/' target='_blank'>Java</a>/<a href='https://www.w3.org/XML/' target='_blank'>XML</a>, using the <a href='https://developer.android.com/studio?hl=en' target='_blank'>Android Studio</a> IDE and the <a href='https://developers.google.com/maps/documentation/android-sdk/overview?hl=en' target='_blank'>Maps SDK for Android APIs</a> provided by Google Cloud.",
+      "image": "./projects/appGeofencing.gif",
       "link": "https://github.com/Truvella99/Android-App"
     },
     {
-      "id": "IoT",
+      "id": 3,
+      "name": "Internet of Things",
       "category": "Embedded",
-      "description": "Final project of the Internet of Things course, which automates the irrigation process of a plant, made in <a href='https://www.python.org/' target='_blank'>Python</a> via the IDE <a href='https://www.zerynth.com/zsdk/' target='_blank'>Zerynth studio</a> and the <a href='https://www.zerynth.com/' target='_blank'>Zerynth</a> platform, in collaboration with colleagues Luigi Fiore and Alessandro Costantino.",
-      "image": "./projects/portfolio.png",
+      "description": "Final project of the Internet of Things course, which automates the irrigation process of a plant, made in <a href='https://www.python.org/' target='_blank'>Python</a> via the IDE <a href='https://www.zerynth.com/zsdk/' target='_blank'>Zerynth studio</a> and the <a href='https://www.zerynth.com/' target='_blank'>Zerynth</a> platform.",
+      "image": "./projects/iot.gif",
       "link": "https://github.com/Truvella99/Internet-of-Things"
     },
     {
-      "id": "Database",
+      "id": 4,
+      "name": "Database",
       "category": "Software",
-      "description": "Final project of the Databases course, which implements in <a href='https://en.wikipedia.org/wiki/SQL' target='_blank'>SQL</a> language (through the DBMS <a href='https://www.postgresql.org/' target='_blank'>PostgreSQL</a>) a relational database for a company that deals with the production and sale of coffee pods and capsules. Project realized in collaboration with colleagues Luigi Fiore, Mario Ferrara and Alessandro Costantino.",
-      "image": "./projects/portfolio.png",
+      "description": "Final project of the Databases course, which implements in <a href='https://en.wikipedia.org/wiki/SQL' target='_blank'>SQL</a> language (through the DBMS <a href='https://www.postgresql.org/' target='_blank'>PostgreSQL</a>) a relational database for a company that deals with the production and sale of coffee pods and capsules.",
+      "image": "./projects/database.jpg",
       "link": "https://github.com/Truvella99/Database"
     },
     {
-      "id": "Bot",
+      "id": 5,
+      "name": "Telegram Bot",
       "category": "Software",
-      "description": "Bot Telegram, developed in <a href='https://www.python.org/' target='_blank'>Python</a> using <a href='https://www.jetbrains.com/pycharm/' target='_blank'>PyCharm</a> IDE and <a href='https://github.com/eternnoir/pyTelegramBotAPI' target='_blank'>pyTelegramBotAPI</a>, made for personal interest, with the aim of automating the management of subscriptions to streaming platforms. The bot remembers the renewal of subscriptions automatically, as well as a series of other additional operations, through notifications to the user. Everything is hosted on a Virtual Machine based on <a href='https://cloud.google.com/' target='_blank'>Google Cloud</a> services.",
-      "image": "./projects/portfolio.png",
+      "description": "Telegram Bot, developed in <a href='https://www.python.org/' target='_blank'>Python</a> using <a href='https://www.jetbrains.com/pycharm/' target='_blank'>PyCharm</a> IDE and <a href='https://github.com/eternnoir/pyTelegramBotAPI' target='_blank'>pyTelegramBotAPI</a>, made for personal interest, with the aim of automating the management of subscriptions to streaming platforms. The bot remembers the renewal of subscriptions automatically, as well as a series of other additional operations, through notifications to the user. Everything is hosted on a Virtual Machine based on <a href='https://cloud.google.com/?hl=en' target='_blank'>Google Cloud</a> services.",
+      "image": "./projects/telegramBot.png",
       "link": "https://github.com/Truvella99/Telegram-Bot"
     },
     {
-      "id": "Cambridge",
+      "id": 6,
+      "name": "Cambridge Script",
       "category": "Software",
       "description": "Simple <a href='https://www.python.org/' target='_blank'>Python</a> script (implemented via <a href='https://www.jetbrains.com/pycharm/' target='_blank'>PyCharm</a> IDE) for scoring in the <a href='https://www.cambridgeenglish.org/exams-and-tests/first/' target='_blank'>Cambridge English B2</a> test. The script requires you to enter the scores obtained in the various parts of the test, then process them and produce a percentage to be converted in the final score.",
-      "image": "./projects/portfolio.png",
+      "image": "./projects/cambridge.png",
       "link": "https://github.com/Truvella99/Cambridge-Score-Calculator"
     },
     {
-      "id": "Digital_Technologies",
+      "id": 7,
+      "name": "Digital Technologies",
       "category": "Software",
-      "description": "Project for the course of Digital Technologies, which involves the implementation of a controller in <a href='https://en.wikipedia.org/wiki/VHDL' target='_blank'>VHDL</a> language that manages the correct opening and closing of a gate. The opening is controlled by a sequence of 3 decimal digits provided by a numeric keypad. Project realized in group through the ISE <a href='https://www.xilinx.com/products/design-tools/ise-design-suite/ise-webpack.html' target='_blank'>XILINX ISE (V14.7) WEB PACK</a> with the colleagues Luigi Fiore and Mario Ferrara.",
-      "image": "./projects/portfolio.png",
+      "description": "Project for the course of Digital Technologies, which involves the implementation of a controller in <a href='https://en.wikipedia.org/wiki/VHDL' target='_blank'>VHDL</a> language that manages the correct opening and closing of a gate. The opening is controlled by a sequence of 3 decimal digits provided by a numeric keypad. Project realized in group through the ISE <a href='https://www.xilinx.com/products/design-tools/ise-design-suite/ise-webpack.html' target='_blank'>XILINX ISE (V14.7) WEB PACK</a>.",
+      "image": "./projects/digitalTechnologies.png",
       "link": "https://github.com/Truvella99/Digital-Technologies"
     },
     {
-      "id": "Youtube_to_mp3",
+      "id": 8,
+      "name": "Youtube to mp3",
       "category": "Software",
       "description": "Simple <a href='https://www.python.org/' target='_blank'>Python</a> script (implemented via <a href='https://www.jetbrains.com/pycharm/' target='_blank'>PyCharm</a> IDE) for downloading mp3 songs from youtube. The Script requires you to enter the youtube playlist link from which it will download the songs, after that the path where them will be saved. If the path is non-existent, the script will create the folder and save the songs into that.",
-      "image": "./projects/portfolio.png",
+      "image": "./projects/ytToMp3.png",
       "link": "https://github.com/Truvella99/Youtube-To-Mp3-Downloader"
     },
     {
-      "id": "Computer_Architecture",
+      "id": 9,
+      "name": "Computer Architecture",
       "category": "Embedded",
       "description": "Computer architecture course project, which involves the implementation of a Tamagotchi in <a href='https://www.open-std.org/jtc1/sc22/wg14/' target='_blank'>C</a> programming language, using the <a href='https://www.keil.com/products/uvision/ide_ov_starting.asp' target='_blank'>Keil µVision</a> IDE, and deployed on <a href='https://drive.google.com/file/d/1B3OMDClI1cjjxWgG2DUWHuc7foEINWr6/view?usp=sharing' target='_blank'>Landtiger Board</a>. The project involved the implementation of the gui and the commands to interact with the Tamagotchi, then the implementation of the audio part with volume adjustment.",
-      "image": "./projects/portfolio.png",
+      "image": "./projects/computerArchitectures.gif",
       "link": "https://github.com/Truvella99/ase_project"
     },
     {
-      "id": "Software_Engineering",
+      "id": 10,
+      "name": "Software Engineering",
       "category": "Software",
       "description": "Project of the Software Engineering course, made by a group of 4 people in <a href='https://www.javascript.com/' target='_blank'>Javascript</a> with the <a href='https://code.visualstudio.com/' target='_blank'>VsCode</a> IDE on the <a href='https://about.gitlab.com/' target='_blank'>GitLab</a> platform. The project included a first phase of adding/modifying some features in a partial implementation of an application to manage expenses (EzWallet). Then there was a phase of <a href='https://drive.google.com/file/d/14lXYJNWTPCpCQtvYtTHd8U33XFJr5By4/view?usp=sharing' target='_blank'>testing</a> of the implemented features, both with unit test and integration test. The project was finally put on <a href='https://www.docker.com/' target='_blank'>docker</a> to test its functionality in a preconfigured environment.",
-      "image": "./projects/portfolio.png",
+      "image": "./projects/softwareEngineering.jpg",
       "link": "https://github.com/Truvella99/se_project"
     },
     {
-      "id": "Machine_Learning",
+      "id": 11,
+      "name": "Machine Learning",
       "category": "ML",
-      "description": "Project of the Machine Learning and Pattern Recognition course, made by a group of 2 people in <a href='https://www.python.org/' target='_blank'>Python</a> with the <a href='https://code.visualstudio.com/' target='_blank'>VsCode</a> IDE. The goal of the project is the development of a classifier to detect whether a fingerprint image represents an authentic fingerprint or a spoofed fingerprint, i.e., a fingerprint image obtained by cloning, possibly with different methods, the fingerprint of an individual. In the project have been considered different working priors, implemented and employed different classifiers (Gaussian, Logistic Regression, SVM, GMM, Fused Models), in order to choose the best one.",
-      "image": "./projects/portfolio.png",
+      "description": "Project of the Machine Learning and Pattern Recognition course, made by a group of 2 people in <a href='https://www.python.org/' target='_blank'>Python</a> with <a href='https://numpy.org/' target='_blank'>Numpy</a> and the <a href='https://code.visualstudio.com/' target='_blank'>VsCode</a> IDE. The goal of the project is the development of a classifier to detect whether a fingerprint image represents an authentic fingerprint or a spoofed fingerprint, i.e., a fingerprint image obtained by cloning, possibly with different methods, the fingerprint of an individual. In the project have been considered different working priors, implemented and employed different classifiers (Gaussian, Logistic Regression, SVM, GMM, Fused Models), in order to choose the best one.",
+      "image": "./projects/machineLearning.jpg",
       "link": "https://github.com/Truvella99/ml_project"
     },
     {
-      "id": "Web_App_1",
+      "id": 12,
+      "name": "Web Application 1",
       "category": "Web",
       "description": "Project of the Web Application 1 course, made in <a href='https://www.javascript.com/' target='_blank'>javascript</a> with the <a href='https://code.visualstudio.com/' target='_blank'>VsCode</a> IDE. The goal of the project is to design and implement a web application to manage a small content management system (CMS). The project was made with the <a href='https://react.dev/' target='_blank'>React framework</a>, using <a href='https://react-bootstrap.netlify.app/' target='_blank'>React Bootstrap</a> for styling and <a href='https://nodejs.org/en' target='_blank'>NodeJs</a> as runtime environment.",
-      "image": "./projects/portfolio.png",
+      "image": "./projects/webApplication1.png",
       "link": "https://github.com/Truvella99/aw1_project"
     },
     {
-      "id": "Pds",
+      "id": 13,
+      "name": "System and device Programming",
       "category": "Software",
       "description": "Project of the System and device programming course, made by a group of 3 people in <a href='https://www.rust-lang.org/' target='_blank'>Rust</a> with the <a href='https://www.jetbrains.com/clion/' target='_blank'>CLion</a> IDE, using the <a href='https://github.com/linebender/druid' target='_blank'>Druid UI toolkit</a>. The goal of the project is the development of a Multi-platform screen-grabbing utility capable of acquiring what is currently shown in a display, post-process it and make it available in one or more formats.",
-      "image": "./projects/portfolio.png",
+      "image": "./projects/systemDeviceProgramming.gif",
       "link": "https://github.com/Truvella99/pds_project"
+    },
+    {
+      "id": 14,
+      "name": "Advanced Machine Learning",
+      "category": "ML",
+      "description": "Project of the Advanced Machine Learning course. The goal of the project was to address the domain shift problem, where the accuracy of the model significantly drops when other domain with different data distribution were involved. For this reason, techniques like UDA (unsupervised domain adaptation) have been used and implemented (by leveraging on the Activation Shaping Hook) in order to cope with this problem. The project was made with the <a href='https://pytorch.org/' target='_blank'>Pytorch</a> framework, using <a href='https://pytorch.org/vision/main/models/generated/torchvision.models.resnet18.html' target='_blank'>resnet18</a> with pretrained weights as base architecture, and both the <a href='https://code.visualstudio.com/' target='_blank'>VsCode</a> IDE and <a href='https://colab.google/' target='_blank'>Google Colab</a> as runtime environments.",
+      "image": "./projects/advancedMachineLearning.png",
+      "link": "https://github.com/Truvella99/Activation-Shaping-AML"
+    },
+    {
+      "id": 15,
+      "name": "Web Application 2",
+      "category": "Web",
+      "description": "Project of the Web Applications 2 course, made in <a href='https://kotlinlang.org/' target='_blank'>Kotlin</a> by using the <a href='https://spring.io/' target='_blank'>Spring</a> framework. The goal was to develop a system for temporary job placement services based on spring microservices as backend, and then a user-friendly front-end that provides seamless access to all required and offered functionalities. All that was implemented by creating all the needed microservices, an API gateway as a bridge beetween them and the front-end, and by leveraging on other well-known frameworks to handle other requirements. The <a href='https://www.keycloak.org/' target='_blank'>Keycloak IAM</a> was used to handle authentication, while <a href='https://camel.apache.org/' target='_blank'>Apache Camel</a> was used to handle the reception of e-mails on gmail and forward it to the microservice. Also <a href='https://kafka.apache.org/' target='_blank'>Apache Kafka</a> has been used  to handle service downtime and <a href='https://debezium.io/' target='_blank'>Debezium</a> to implement the Outbox pattern where needed and guarantee transactionality. Finally, observability and monitoring on the system has been implemented through the usage of <a href='https://grafana.com/oss/loki/' target='_blank'>Loki</a> as log aggregation data source, and <a href='https://prometheus.io/' target='_blank'>Prometheus</a> as metric data source. All was displayed through <a href='https://grafana.com/' target='_blank'>Grafana</a> dashboards. Additional details can be found <a href='https://drive.google.com/file/d/1gqA2RrxHeYjL4Im6iysYdxFb9YDPl95v/view?usp=sharing' target='_blank'>here</a>.",
+      "image": "./projects/webApplication2.jpg",
+      "link": "https://github.com/Truvella99/awII_project"
+    },
+    {
+      "id": 16,
+      "name": "Mobile Application Development",
+      "category": "Mobile",
+      "description": "Project of the Mobile Application Development course, made in <a href='https://kotlinlang.org/' target='_blank'>Kotlin</a> with the <a href='https://developer.android.com/studio?hl=en' target='_blank'>AndroidStudio</a> IDE. The goal was to create a teamwork management app, designed to facilitate collaboration, communication, and coordination among team members to enhance users' overall productivity and efficiency. The project was made by leveraging also on the <a href='https://developer.android.com/compose' target='_blank'>Jetpack Compose</a> framework and by using <a href='https://firebase.google.com/' target='_blank'>Firebase</a> as backend service to store and retrieve data.",
+      "image": "./projects/mad.gif",
+      "link": "https://github.com/Truvella99/mad_project"
+    },
+    {
+      "id": 17,
+      "name": "Human Computer Interaction",
+      "category": "Mobile;Web",
+      "description": "Project of the Human Computer Interaction course, made in <a href='https://www.javascript.com/' target='_blank'>javascript</a> with the <a href='https://code.visualstudio.com/' target='_blank'>VsCode</a> IDE. The goal of the project (called GLUTEN-HUB) is to design and implement an application to allow celiacs people to browse several restaurants available, see the offered dishes and ingredients in depth. All this done in order to make them feel safer about the quality of what they will eat, without the risk of feel sick. To achieve this, a focus on the ingredients provenience, as well as quality and safety of the offered products was considered inside the application. The project was made with the <a href='https://react.dev/' target='_blank'>React framework</a>, using <a href='https://react-bootstrap.netlify.app/' target='_blank'>React Bootstrap</a> for styling and <a href='https://nodejs.org/en' target='_blank'>NodeJs</a> as runtime environment.",
+      "image": "./projects/humanComputerInteraction.gif",
+      "link": "https://github.com/Truvella99/hci_project"
     }
   ],
   // --------------------------------------- CONTACT ME SECTION ---------------------------------------

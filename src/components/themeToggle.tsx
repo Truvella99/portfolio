@@ -1,19 +1,23 @@
-import { useEffect, useState } from 'react'
+import { useEffect, useState, useContext } from 'react'
 import { MdSunny } from "react-icons/md";
 import { IoMdMoon } from "react-icons/io";
 import { isMobile } from '@/utils/isMobile';
+import { Translation_Theme_Context } from "@/components/Provider";
 
 export default function ThemeToggle() {
-  const [userTheme, setUserTheme] = useState<'light' | 'dark' | null>(null)
-  
+  const {userTheme, setUserTheme} = useContext(Translation_Theme_Context)!;
+
   useEffect(() => {
     const storedTheme = localStorage.getItem('theme')
     if (storedTheme === 'light' || storedTheme === 'dark') {
       setUserTheme(storedTheme)
       document.documentElement.setAttribute('data-theme', storedTheme)
     } else {
-      // Let system preference apply; no manual override
-      document.documentElement.removeAttribute('data-theme')
+      // Fetch system preference and apply it
+      const prefersLight = window.matchMedia('(prefers-color-scheme: light)').matches;
+      const systemTheme = prefersLight ? 'light' : 'dark';
+      setUserTheme(systemTheme);
+      document.documentElement.setAttribute('data-theme', systemTheme);
     }
   }, [])
 

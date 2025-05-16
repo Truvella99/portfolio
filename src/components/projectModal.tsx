@@ -6,8 +6,9 @@ import { ProjectModalProps } from '../../declarations'
 import { motion, AnimatePresence } from 'framer-motion';
 import Image from 'next/image'
 import { isMobile } from '@/utils/isMobile'
+import IconUtility from './icon'
 
-const processString = (str: string) => {
+const processProjectDescription = (str: string) => {
   const regex = /<a href='([^']+)' target='_blank'>([^<]+)<\/a>/g;
   let lastIndex = 0;
   const segments = [];
@@ -162,9 +163,13 @@ export default function ProjectModal({
                       height={300}
                       className="h-[75%] w-full object-contain"
                     />
-                    <p className="text-white text-base">
-                      {processString((project?.description) ? project.description : '')}
-                    </p>
+                    <div className="w-full text-white text-base">
+                      <div className="flex gap-8 items-center">
+                        <h1 className="text-2xl">{project?.name || ''}</h1>
+                        <IconUtility Icon={FaCode} link={project?.link || ''} />
+                      </div>
+                      {processProjectDescription((project?.description) ? project.description : '')}
+                    </div>
                   </motion.div>
                 </AnimatePresence>
               </DialogPanel>

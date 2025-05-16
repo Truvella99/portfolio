@@ -2,7 +2,7 @@
 import NavBar from "@/components/navbar";
 import Home from "@/sections/home";
 import { useState } from "react";
-import { TranslationProvider } from "@/components/DataContext";
+import { Translation_Theme_Provider } from "@/components/Provider";
 import About from "@/sections/about";
 import Skills from "@/sections/skills";
 import FadeInOnScroll from "@/utils/fadein";
@@ -29,7 +29,7 @@ export default function App() {
   }, []);
 
   return (
-    <TranslationProvider>
+    <Translation_Theme_Provider>
       <NavBar setIsSideBarOpen={setIsSideBarOpen} />
       {!isSideBarOpen ? <div className="scroll-padding-top-custom"> 
         <FadeInOnScroll><Home/></FadeInOnScroll>
@@ -42,6 +42,6 @@ export default function App() {
         <FadeInOnScroll><Footer/></FadeInOnScroll>
         <BackToTopButton/>
       </div> : ''}
-    </TranslationProvider>
+    </Translation_Theme_Provider>
   );
 }

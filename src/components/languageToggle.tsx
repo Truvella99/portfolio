@@ -1,12 +1,12 @@
 import React, { useState, useRef, useEffect } from "react";
 import { useContext } from "react";
-import { TranslationContext } from "@/components/DataContext";
+import { Translation_Theme_Context } from "@/components/Provider";
 import { IoLanguage } from "react-icons/io5";
 import { isMobile } from "@/utils/isMobile";
 
 export default function LanguageToggle() {
-    const language = useContext(TranslationContext)?.language;
-    const setLanguage = useContext(TranslationContext)?.setLanguage;
+    const language = useContext(Translation_Theme_Context)?.language;
+    const setLanguage = useContext(Translation_Theme_Context)?.setLanguage;
     const [openDropDown, setOpenDropDown] = useState(false);
     const dropdownRef = useRef<HTMLDivElement>(null);
 

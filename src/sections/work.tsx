@@ -1,5 +1,5 @@
 import { useContext } from "react";
-import { TranslationContext } from "@/components/DataContext";
+import { Translation_Theme_Context } from "@/components/Provider";
 import { VerticalTimeline, VerticalTimelineElement } from 'react-vertical-timeline-component';
 import 'react-vertical-timeline-component/style.min.css';
 import { motion } from "framer-motion";
@@ -7,7 +7,7 @@ import Image from "next/image";
 import type { Work } from "../../declarations";
 
 export default function Work() {
-    const translations = useContext(TranslationContext)?.translations;
+    const translations = useContext(Translation_Theme_Context)?.translations;
     if (!translations) return null; // Handle case when translations are not yet loaded
     return (
         <section id={translations.sections[4]} className={"text-white py-16 px-8 md:px-20 flex items-center justify-center"}>

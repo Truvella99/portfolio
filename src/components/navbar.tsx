@@ -4,7 +4,7 @@ import Image from "next/image";
 import { FaGithub, FaLinkedin } from "react-icons/fa";
 import IconUtility from '@/components/icon';
 import React, { useContext, useRef, useEffect } from "react";
-import { TranslationContext } from "@/components/DataContext";
+import { Translation_Theme_Context } from "@/components/Provider";
 import { useState } from "react";
 import LanguageToggle from '@/components/languageToggle';
 import { SectionVisibility } from '../../declarations';
@@ -18,7 +18,7 @@ function classNames(...classes: any) {
 export default function NavBar(props: any) {
   const [section, setSection] = useState('Home');
   const {setIsSideBarOpen} = props;
-  const translations = useContext(TranslationContext)?.translations;
+  const translations = useContext(Translation_Theme_Context)?.translations;
   const sectionsRef = useRef<HTMLDivElement[]>([]); // To track section elements
   const sectionVisibilities: SectionVisibility[] = []; // To track visibility of sections
   const isManualClickRef = useRef(false); // To track manual clicks

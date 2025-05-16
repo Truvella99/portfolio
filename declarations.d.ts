@@ -6,10 +6,12 @@ declare module "*.jsonc" {
   
 // ----------------------- INTERFACES ----------------------- //
 
-interface TranslationContextType {
+interface Translation_Theme_ContextType {
   translations: Record<string, any> | undefined;
   language: string;
   setLanguage: (lang: string) => void;
+  userTheme: 'light' | 'dark' | null;
+  setUserTheme: (theme: 'light' | 'dark' | null) => void;
 }
 
 interface SectionVisibility {
@@ -56,7 +58,8 @@ interface IconUtilityProps {
 }
 
 interface Project {
-    id: string,
+    id: number,
+    name: string,
     category: string,
     description: string
     image: string,
@@ -78,7 +81,7 @@ interface ProjectModalProps {
 }
 
 export {
-    TranslationContextType,
+    Translation_Theme_ContextType,
     SectionVisibility,
     ProjectsTabsProps,
     Education,

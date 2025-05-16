@@ -1,12 +1,12 @@
 import { useContext, useEffect, useState } from "react";
-import { TranslationContext } from "@/components/DataContext";
+import { Translation_Theme_Context } from "@/components/Provider";
 import ProjectsTabs from "@/components/projectTabs";
 import ProjectCard from "@/components/projectCard";
 import ProjectModal from "@/components/projectModal";
 import { Project } from '../../declarations'
 
 export default function Projects() {
-    const translations = useContext(TranslationContext)?.translations;
+    const translations = useContext(Translation_Theme_Context)?.translations;
     const [activeTab, setActiveTab] = useState(""); // Default to an empty string
     const [open, setOpen] = useState(false); // State to control project modal visibility
     const [project, setProject] = useState<Project | null>(null); // State to hold the selected project
@@ -14,6 +14,7 @@ export default function Projects() {
     useEffect(() => {
         if (translations) {
             setActiveTab(translations.categories[0]);
+            setProject(translations.projects.find((p: Project) => p.id === project?.id )); // Reset the project when the language changes
         }
     }, [translations]);
     
@@ -24,7 +25,10 @@ export default function Projects() {
         // return everything if the active tab is "All"
         if (activeTab === translations.categories[0]) return translations.projects;
         // return only the projects that match the active tab category
-        return translations.projects.filter((project: Project) => project.category === activeTab);
+        return translations.projects.filter((project: Project) => {
+            const projectCategories = project.category.split(";");
+            return projectCategories.includes(activeTab);
+        });
     }
 
     return (
@@ -32,7 +36,7 @@ export default function Projects() {
             <div className="min-h-[30vh] min-w-[81vw] max-w-[81vw] mx-auto px-6 flex flex-col">
                 <div>
                     <h1 className="text-blue-400 text-5xl font-bold leading-tight mb-8">{translations.project}</h1>
-                    <ProjectsTabs tabs={translations.categories.map((t: string) => ({id:t,label:t}))} activeTab={activeTab} setActiveTab={setActiveTab} />
+                    <ProjectsTabs tabs={translations.categories.map((category: string) => ({id:category,label:category}))} activeTab={activeTab} setActiveTab={setActiveTab} />
                 </div>
                 <ProjectModal open={open} setOpen={setOpen} project={project} setProject={setProject} projects={filterByTabCategory()} />
                 <div className="flex flex-wrap md:flex-row flex-col justify-center items-center gap-4 mt-8">

@@ -1,5 +1,5 @@
 import { useContext, useState, useRef } from "react";
-import { TranslationContext } from "@/components/DataContext";
+import { Translation_Theme_Context } from "@/components/Provider";
 import { DotLottieReact } from '@lottiefiles/dotlottie-react';
 import ReCAPTCHA from "react-google-recaptcha";
 import { validate } from 'email-validator';
@@ -7,7 +7,7 @@ import emailjs from "@emailjs/browser";
 import Swal from "sweetalert2";
 
 export default function ContactMe() {
-    const translations = useContext(TranslationContext)?.translations;
+    const translations = useContext(Translation_Theme_Context)?.translations;
     const [name, setName] = useState({ value: "", error: "" });
     const [email, setEmail] = useState({ value: "", error: "" });
     const [subject, setSubject] = useState({ value: "", error: "" });

@@ -1,8 +1,8 @@
-import { TranslationContext } from "@/components/DataContext";
+import { Translation_Theme_Context } from "@/components/Provider";
 import { useContext } from "react";
 
 export default function Footer() {
-    const translations = useContext(TranslationContext)?.translations;
+    const translations = useContext(Translation_Theme_Context)?.translations;
     if (!translations) return null; // Handle case when translations are not yet loaded
     return (
         <footer className="w-full py-6 bg-[var(--secondary-background)]">

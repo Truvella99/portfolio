@@ -2,7 +2,7 @@ import IconUtility from "@/components/icon";
 import { FaGithub, FaLinkedin } from "react-icons/fa";
 import { TypeAnimation } from 'react-type-animation';
 import { useContext } from "react";
-import { TranslationContext } from "@/components/DataContext";
+import { Translation_Theme_Context } from "@/components/Provider";
 import Image from "next/image";
 
 function decodeHtmlEntities(input: string): string {
@@ -12,7 +12,7 @@ function decodeHtmlEntities(input: string): string {
 }
 
 export default function Home() {
-    const translations = useContext(TranslationContext)?.translations;
+    const translations = useContext(Translation_Theme_Context)?.translations;
     if (!translations) return null; // Handle case when translations are not yet loaded
     
     return (

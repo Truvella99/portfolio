@@ -1,10 +1,10 @@
 import { useContext } from "react";
-import { TranslationContext } from "@/components/DataContext";
+import { Translation_Theme_Context } from "@/components/Provider";
 import type { Education } from "../../declarations";
 import EducationCard from "@/components/educationCard";
 
 export default function Education() {
-    const translations = useContext(TranslationContext)?.translations;
+    const translations = useContext(Translation_Theme_Context)?.translations;
     if (!translations) return null; // Handle case when translations are not yet loaded
     return (
         <section id={translations.sections[3]} className={"bg-[var(--secondary-background)] text-white py-16 px-8 md:px-20 flex items-center justify-center"}>

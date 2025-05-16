@@ -2,15 +2,16 @@
 import React, { createContext, useState, useEffect, ReactNode } from "react";
 import enJson from "@/locales/en.json";
 import itJson from "@/locales/it.json";
-import { TranslationContextType } from "../../declarations";
+import { Translation_Theme_ContextType } from "../../declarations";
 
 // Create the context
-export const TranslationContext = createContext<TranslationContextType | undefined>(undefined);
+export const Translation_Theme_Context = createContext<Translation_Theme_ContextType | undefined>(undefined);
 
 // Create the provider component
-export const TranslationProvider = ({ children }: { children: ReactNode }) => {
+export const Translation_Theme_Provider = ({ children }: { children: ReactNode }) => {
   const [language, setLanguage] = useState("en"); // Default language
   const [translations, setTranslations] = useState<Record<string, any> | undefined>(undefined);
+  const [userTheme, setUserTheme] = useState<'light' | 'dark' | null>(null);
 
   useEffect(() => {
     // Dynamically load the JSON based on the selected language
@@ -21,8 +22,8 @@ export const TranslationProvider = ({ children }: { children: ReactNode }) => {
   }, [language]);
 
   return (
-    <TranslationContext.Provider value={{ translations, language, setLanguage }}>
+    <Translation_Theme_Context.Provider value={{ translations, language, setLanguage, userTheme, setUserTheme }}>
       {children}
-    </TranslationContext.Provider>
+    </Translation_Theme_Context.Provider>
   );
 };
