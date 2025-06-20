@@ -20,7 +20,7 @@ export default function About() {
 
     return (
         <section id={translations.sections[1]} className="bg-[var(--secondary-background)] text-white py-16 px-8 md:px-20">
-            <div className="min-h-[70vh] max-w-[81vw] mx-auto grid grid-cols-1 md:grid-cols-2 gap-12 items-center">
+            <div className="min-h-[70vh] w-[81vw] mx-auto grid grid-cols-1 md:grid-cols-2 gap-12 items-center">
 
                 {/* LEFT: IMAGE */}
                 <div className="min-h-[50vh] sm:min-h-[60vh] md:min-h-[70vh] relative flex flex-col items-center">

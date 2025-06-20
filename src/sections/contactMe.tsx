@@ -103,7 +103,7 @@ export default function ContactMe() {
 
     return (
         <section id={translations.sections[6]} className={"text-white text-white py-16 px-8 md:px-20"}>
-            <div className="min-h-[70vh] max-w-[81vw] mx-auto grid grid-cols-1 md:grid-cols-2 gap-12 items-center">
+            <div className="min-h-[70vh] w-[81vw] mx-auto grid grid-cols-1 md:grid-cols-2 gap-12 items-center">
                 {/* LEFT: IMAGE */}
                 <div className="min-h-[50vh] sm:min-h-[60vh] md:min-h-[70vh] relative flex flex-col items-center">
                     <DotLottieReact
@@ -115,7 +115,7 @@ export default function ContactMe() {
                 </div>
 
                 {/* RIGHT: TEXT + FORM */}
-                <div className='min-h-[70vh]'>
+                <div className='min-h-[70vh] w-[90%]'>
                     <h1 className="text-blue-400 text-5xl font-bold leading-tight mb-20">{translations.contactMe}</h1>
                     <form onSubmit={(e) => handleSubmit(e)}>
                         {/* NAME + EMAIL */}
