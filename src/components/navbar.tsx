@@ -150,11 +150,11 @@ export default function NavBar(props: any) {
       <DisclosurePanel className="md:hidden">
         <div className="flex flex-col items-center space-y-1 px-2 pt-2 pb-3 h-[75vh]">
           <Image
+            loading='lazy'
             src="./profile-img.png"
             alt="Profile Image"
             width={180}
             height={38}
-            priority
           />
           <h1 className="text-2xl font-bold pt-5 pb-5">{translations.name}</h1>
           {navigation.map((item: any) => (

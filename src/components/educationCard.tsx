@@ -43,6 +43,7 @@ export default function EducationCard({ education }: { education: Education }) {
                 <div className="flex md:flex-row flex-col items-start">
                     <div className="w-full md:w-50 flex-shrink-0 flex items-center justify-center">
                         <Image
+                            loading='lazy'
                             src={education.image}
                             alt=""
                             width={200}

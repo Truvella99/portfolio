@@ -136,16 +136,6 @@ export default function ProjectModal({
                   />
                 </div>
 
-                {/* Code Button 
-                <div
-                  onClick={() => window.open(project?.link, '_blank')}
-                  className="absolute right-5 bottom-2 flex items-center space-x-2 bg-[#51a2ff] rounded-full p-2 cursor-pointer z-10"
-                >
-                  <span className="text-sm text-black font-semibold">Code</span>
-                  <FaCode className="text-black/60" size={20} />
-                </div>
-                */}
-
                 {/* Modal Content */}
                 <AnimatePresence mode="wait">
                   <motion.div
@@ -157,11 +147,12 @@ export default function ProjectModal({
                     className="h-full px-6 pt-6 pb-4 flex flex-col items-center space-y-6 overflow-auto"
                   >
                     <Image
+                      loading='lazy'
                       src={(project?.image) ? project.image : ''}
                       alt="Illustration"
                       width={300}
                       height={300}
-                      className="h-[75%] w-full object-contain"
+                      className="pt-4 h-[75%] w-full object-contain"
                     />
                     <div className="w-full text-white text-base">
                       <div className="flex gap-8 items-center">

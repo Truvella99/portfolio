@@ -64,6 +64,12 @@ html {
   }
 }
 
+/* Hide scrollbars globally but keep scroll functionality */
+/* For Chrome, Edge, Safari */
+*::-webkit-scrollbar { width: 0px; height: 0px; background: transparent; display: none; }
+/* For Firefox */
+* { scrollbar-width: none; /* Hide scrollbar */ -ms-overflow-style: none; /* IE and Edge */ }
+
 /* SWEET ALERTS CUSTOM CSS */
 
 .custom-swal-popup { @apply bg-[var(--secondary-background)] rounded-lg shadow-lg; }

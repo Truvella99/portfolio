@@ -19,11 +19,11 @@ export default function About() {
     if (!translations) return null; // Handle case when translations are not yet loaded
 
     return (
-        <section id={translations.sections[1]} className="bg-[var(--secondary-background)] text-white py-16 px-8 md:px-20">
-            <div className="min-h-[70vh] w-[81vw] mx-auto grid grid-cols-1 md:grid-cols-2 gap-12 items-center">
+        <section id={translations.sections[1]} className="bg-[var(--secondary-background)] text-white pb-16 px-8 md:px-20">
+            <div className="min-h-[70vh] w-[81vw] mx-auto grid grid-cols-1 lg:grid-cols-2 lg:gap-12 items-center">
 
                 {/* LEFT: IMAGE */}
-                <div className="min-h-[50vh] sm:min-h-[60vh] md:min-h-[70vh] relative flex flex-col items-center">
+                <div className="relative flex flex-col items-center">
                     <DotLottieReact
                         src="./homeAnimation.lottie"
                         loop
@@ -33,7 +33,7 @@ export default function About() {
                 </div>
 
                 {/* RIGHT: ABOUT TEXT */}
-                <div className='min-h-[70vh]'>
+                <div>
                     <h1 className="text-blue-400 text-5xl font-bold leading-tight mb-20">{translations.about}</h1>
                     <p className="text-gray-300 mb-20 text-xl">{translations.aboutDescription} </p>
 

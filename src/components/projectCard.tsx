@@ -61,6 +61,7 @@ export default function ProjectCard({ setOpen, project, setProject }: ProjectCar
                 className="absolute inset-4 grid place-content-center rounded-xl bg-[#51a2ff] shadow-lg overflow-hidden group"
             >
                 <Image
+                    loading='lazy'
                     src={project.image}
                     alt="Card Image"
                     fill

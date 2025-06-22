@@ -4,6 +4,7 @@ import { TypeAnimation } from 'react-type-animation';
 import { useContext } from "react";
 import { Translation_Theme_Context } from "@/components/Provider";
 import Image from "next/image";
+import { isMobile } from "@/utils/isMobile";
 
 function decodeHtmlEntities(input: string): string {
     const textarea = document.createElement("textarea");
@@ -17,7 +18,7 @@ export default function Home() {
     
     return (
         <section id={translations.sections[0]} className="text-white h-screen">
-            <div className="container lg:h-full w-[81vw] mx-auto flex flex-col-reverse lg:flex-row items-center justify-center">
+            <div className="container h-full w-[81vw] mx-auto flex flex-col-reverse lg:flex-row items-center justify-center">
                 {/* Social Icons */}
                 <div className="md:flex hidden lg:flex-col flex-row gap-4 lg:absolute right-6 top-1/2 transform -translate-y-1/2 mt-5">
                     <IconUtility Icon={FaLinkedin} link={'https://www.linkedin.com/in/domenico-gagliardo-3256ba229/'} />
@@ -25,8 +26,8 @@ export default function Home() {
                 </div>
                 {/* Text content */}
                 <div className="w-full lg:w-2/5 text-center lg:text-left">
-                    <h3 className="text-blue-400 tracking-wider text-5xl xl:text-6xl mb-12 xl:mb-20">{decodeHtmlEntities(translations.hello)}</h3>
-                    <h1 className="text-6xl xl:text-7xl tracking-wider font-bold mt-2 mb-12 xl:mb-20">{translations.name}</h1>
+                    <h3 className="text-blue-400 tracking-wider text-4xl lg:text-5xl xl:text-6xl mb-12 xl:mb-20">{decodeHtmlEntities(translations.hello)}</h3>
+                    <h1 className="text-5xl lg:text-6xl xl:text-7xl tracking-wider font-bold mt-2 mb-12 xl:mb-20">{translations.name}</h1>
                     <p className="mt-4 text-2xl xl:text-3xl">
                         {`${translations.passionate} `}
                         <span className="text-blue-400">
@@ -50,11 +51,12 @@ export default function Home() {
                 </div>
 
                 {/* Image */}
-                <div className="w-full lg:w-3/5 mb-12 lg:mb-0 flex justify-center items-center min-h-[400px] md:min-h-[500px] xl:min-h-[600px]">
+                <div className={`w-full lg:w-3/5 mb-5 lg:mb-0 flex justify-center items-center min-h-[250px] sm:min-h-[300px] ${isMobile() ? 'md:min-h-[500px]' : 'md:min-h-[350px]'} lg:min-h-[600px]`}>
                     <Image 
+                        loading='lazy'
                         src="./profile-img.png"
                         alt={translations.name} 
-                        className="bg-transparent h-auto max-h-[480px] md:max-h-[580px] xl:max-h-[660px] w-auto"
+                        className={`bg-transparent h-auto max-h-[300px] sm:max-h-[350px] ${isMobile() ? 'md:max-h-[550px]' : 'md:max-h-[400px]'} lg:max-h-[660px] w-auto`}
                         width={500}
                         height={500}
                     />

@@ -37,10 +37,10 @@ export default function LanguageToggle() {
             <div className={`absolute z-10 mt-10 ${openDropDown ? '' : 'hidden'} bg-[#51a2ff] rounded-lg`}>
                 <ul className="py-2 text-sm" aria-labelledby="dropdownDefaultButton">
                     <li>
-                        <img width={70} height={35} src='./italian.png' onClick={() => toggleLanguage('it')} className="block px-4 py-2 bg-[#51a2ff] cursor-pointer"/>
+                        <img loading="lazy" width={70} height={35} src='./italian.png' onClick={() => toggleLanguage('it')} className="block px-4 py-2 bg-[#51a2ff] cursor-pointer"/>
                     </li>
                     <li>
-                        <img width={70} height={35} src='./english.png' onClick={() => toggleLanguage('en')} className="block px-4 py-2 bg-[#51a2ff] cursor-pointer"/>
+                        <img loading="lazy" width={70} height={35} src='./english.png' onClick={() => toggleLanguage('en')} className="block px-4 py-2 bg-[#51a2ff] cursor-pointer"/>
                     </li>
                 </ul>
             </div>

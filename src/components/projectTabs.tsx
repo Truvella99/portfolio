@@ -24,7 +24,7 @@ export default function ProjectsTabs({ activeTab, setActiveTab, tabs }: Projects
 
   return (
     <div className="flex items-center justify-center py-4">
-      <div className={`relative flex flex-wrap justify-center space-x-2 ${isMobile() ? 'rounded-[15%]' : 'rounded-full'} bg-[var(--background)] p-1 shadow-lg`}>
+      <div className={`relative flex flex-wrap items-center justify-center gap-2 p-1`}>
         {/* Tabs */}
         {tabs.map((tab) => {
           const isActive = activeTab === tab.id;
@@ -32,7 +32,7 @@ export default function ProjectsTabs({ activeTab, setActiveTab, tabs }: Projects
             <motion.button
               key={tab.id}
               className={`relative z-10 flex items-center justify-center px-5 ${isMobile() ? 'py-1' : 'py-3'} text-sm font-bold transition-colors duration-300 ${
-                isActive ? "text-black bg-white rounded-full" : "text-gray-500 rounded-full"
+                isActive ? "text-black bg-white rounded-full" : "text-white rounded-full"
               }`}
               onClick={() => handleTabClick(tab.id)}
               animate={{

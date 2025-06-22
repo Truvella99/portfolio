@@ -5,6 +5,7 @@ import ReCAPTCHA from "react-google-recaptcha";
 import { validate } from 'email-validator';
 import emailjs from "@emailjs/browser";
 import Swal from "sweetalert2";
+import { isMobile } from "@/utils/isMobile";
 
 export default function ContactMe() {
     const translations = useContext(Translation_Theme_Context)?.translations;
@@ -102,10 +103,10 @@ export default function ContactMe() {
     }
 
     return (
-        <section id={translations.sections[6]} className={"text-white text-white py-16 px-8 md:px-20"}>
-            <div className="min-h-[70vh] w-[81vw] mx-auto grid grid-cols-1 md:grid-cols-2 gap-12 items-center">
+        <section id={translations.sections[6]} className={"text-white text-white pb-16 lg:pt-16 px-8 md:px-20"}>
+            <div className="min-h-[70vh] w-[81vw] mx-auto grid grid-cols-1 lg:grid-cols-2 items-center">
                 {/* LEFT: IMAGE */}
-                <div className="min-h-[50vh] sm:min-h-[60vh] md:min-h-[70vh] relative flex flex-col items-center">
+                <div className=" relative flex flex-col items-center justify-center">
                     <DotLottieReact
                         src="./contactAnimation.lottie"
                         loop
@@ -115,7 +116,7 @@ export default function ContactMe() {
                 </div>
 
                 {/* RIGHT: TEXT + FORM */}
-                <div className='min-h-[70vh] w-[90%]'>
+                <div className={`${isMobile() ? 'w-full lg:w-[90%]' : 'w-[90%] mx-auto'}`}>
                     <h1 className="text-blue-400 text-5xl font-bold leading-tight mb-20">{translations.contactMe}</h1>
                     <form onSubmit={(e) => handleSubmit(e)}>
                         {/* NAME + EMAIL */}
@@ -130,7 +131,7 @@ export default function ContactMe() {
                                     className="mt-1 w-full px-4 py-2 border border-gray-600 rounded-md shadow-sm focus:outline-none focus:ring-2 focus:ring-blue-400 focus:border-blue-400"
                                 />
                                 <p
-                                    className={`mt-1 ml-4 text-sm transition-all duration-1500 lg:h-5 h-10 ${name.error ? 'text-red-500 opacity-100' : 'text-blue-400 opacity-100'
+                                    className={`mt-1 ml-4 text-sm transition-colors transition-opacity duration-1500 lg:h-5 h-10 ${name.error ? 'text-red-500 opacity-100' : 'opacity-0'
                                         }`}
                                 >
                                     {name.error || ' '}
@@ -146,7 +147,7 @@ export default function ContactMe() {
                                     className="mt-1 w-full px-4 py-2 border border-gray-600 rounded-md shadow-sm focus:outline-none focus:ring-2 focus:ring-blue-400 focus:border-blue-400"
                                 />
                                 <p
-                                    className={`mt-1 ml-4 text-sm transition-all duration-1500 lg:h-5 h-10 ${email.error ? 'text-red-500 opacity-100' : 'text-blue-400 opacity-100'
+                                    className={`mt-1 ml-4 text-sm transition-colors transition-opacity duration-1500 lg:h-5 h-10 ${email.error ? 'text-red-500 opacity-100' : 'opacity-0'
                                         }`}
                                 >
                                     {email.error || ' '}
@@ -165,7 +166,7 @@ export default function ContactMe() {
                                 className="mt-1 w-full px-4 py-2 border border-gray-600 rounded-md shadow-sm focus:outline-none focus:ring-2 focus:ring-blue-400 focus:border-blue-400"
                             />
                             <p
-                                className={`mt-1 ml-4 text-sm transition-all duration-1500 lg:h-5 h-10 ${subject.error ? 'text-red-500 opacity-100' : 'text-blue-400 opacity-100'
+                                className={`mt-1 ml-4 text-sm transition-colors transition-opacity duration-1500 lg:h-5 h-10 ${subject.error ? 'text-red-500 opacity-100' : 'opacity-0'
                                     }`}
                             >
                                 {subject.error || ' '}
@@ -183,7 +184,7 @@ export default function ContactMe() {
                                 className="mt-1 w-full px-4 py-2 border border-gray-600 rounded-md shadow-sm focus:outline-none focus:ring-2 focus:ring-blue-400 focus:border-blue-400"
                             />
                             <p
-                                className={`mt-1 ml-4 text-sm transition-all duration-1500 lg:h-5 h-10 ${message.error ? 'text-red-500 opacity-100' : 'text-blue-400 opacity-100'
+                                className={`mt-1 ml-4 text-sm transition-colors transition-opacity duration-1500 lg:h-5 h-10 ${message.error ? 'text-red-500 opacity-100' : 'opacity-0'
                                     }`}
                             >
                                 {message.error || ' '}
@@ -200,7 +201,7 @@ export default function ContactMe() {
                                     sitekey="6LeISjcfAAAAAByM4oJ4NqWQdgZJInbxUEruoGCD"
                                 />
                                 <p
-                                    className={`mt-1 ml-4 mb-4 text-sm transition-all duration-1500 lg:h-5 h-10 ${recaptchaError ? 'text-red-500 opacity-100' : 'text-blue-400 opacity-100'
+                                    className={`mt-1 ml-4 mb-4 text-sm transition-colors transition-opacity duration-1500 lg:h-5 h-10 ${recaptchaError ? 'text-red-500 opacity-100' : 'opacity-0'
                                         }`}
                                 >
                                     {recaptchaError || ' '}
