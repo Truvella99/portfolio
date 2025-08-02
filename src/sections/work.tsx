@@ -10,21 +10,21 @@ export default function Work() {
     const translations = useContext(Translation_Theme_Context)?.translations;
     if (!translations) return null; // Handle case when translations are not yet loaded
     return (
-        <section id={translations.sections[4]} className={"text-white py-16 px-8 md:px-20 flex items-center justify-center"}>
+        <section id={translations.sections[4]} className={"py-16 px-8 md:px-20 flex items-center justify-center"}>
             <div className="min-h-[30vh] w-[81vw] mx-auto flex flex-col-reverse lg:flex-row items-center">
                 <div>
-                    <h1 className="text-blue-400 text-5xl font-bold leading-tight mb-8">{translations.workExperience}</h1>
-                    <p className="text-gray-300 mb-12 text-xl">{translations.workExperienceDescription}</p>
+                    <h1 className="text-[var(--headings)] text-5xl font-bold leading-tight mb-8">{translations.workExperience}</h1>
+                    <p className="text-[var(--text)] mb-12 text-xl">{translations.workExperienceDescription}</p>
                     {/* Map through the work experiences */}
                     <VerticalTimeline>
                         {translations.workExperiences.map((workExperience: Work, index: number) => (
                             <VerticalTimelineElement
                                 key={index}
                                 className="vertical-timeline-element--work"
-                                contentStyle={{ background: '#51a2ff', color: '#fff' }}
-                                contentArrowStyle={{ borderRight: '7px solid  #51a2ff' }}
+                                contentStyle={{ background: 'var(--secondary)', color: '#fff' }}
+                                contentArrowStyle={{ borderRight: '7px solid  var(--secondary)' }}
                                 date={workExperience.date}
-                                iconStyle={{ background: '#51a2ff', color: '#fff', cursor: "pointer" }}
+                                iconStyle={{ background: 'var(--text)', color: '#fff', cursor: "pointer" }}
                                 iconOnClick={() => {window.open(workExperience.website, "_blank")}}
                                 icon={<Image loading='lazy' alt="" src={workExperience.image} className="rounded-full" width={100} height={100}/>}
                             >
@@ -33,7 +33,7 @@ export default function Work() {
                                     whileHover={{
                                         scale: 1.05,
                                         y: -6,
-                                        color: "var(--background)",
+                                        color: "var(--accent)",
                                     }}
                                     whileTap={{ scale: 0.97 }}
                                     initial={{ opacity: 0, y: 20 }}

@@ -1,4 +1,5 @@
-import React, { useRef } from "react";
+import React, { useRef, useContext } from "react";
+import { Translation_Theme_Context } from "@/components/Provider";
 import { motion, useMotionTemplate, useMotionValue, useSpring } from "framer-motion";
 import Image from "next/image";
 import { FaEye, FaCode } from "react-icons/fa";
@@ -9,6 +10,7 @@ const ROTATION_RANGE = 15;
 const HALF_ROTATION_RANGE = ROTATION_RANGE / 2;
 
 export default function ProjectCard({ setOpen, project, setProject }: ProjectCardProps) {
+    const userTheme = useContext(Translation_Theme_Context)?.userTheme;
     const ref = useRef<HTMLDivElement | null>(null);
 
     const x = useMotionValue(0);
@@ -51,14 +53,14 @@ export default function ProjectCard({ setOpen, project, setProject }: ProjectCar
                 transformStyle: "preserve-3d",
                 transform,
             }}
-            className="relative md:h-[216px] md:w-[384px] sm:w-[312px] sm:h-[176px] h-[135px] w-[240px] rounded-xl bg-gradient-to-br from-[var(--background)] to-[var(--secondary-background)]"
+            className="relative md:h-[216px] md:w-[384px] sm:w-[312px] sm:h-[176px] h-[135px] w-[240px] rounded-xl bg-gradient-to-br from-[var(--background)] to-[var(--secondary)]"
         >
             <div
                 style={{
                     transform: "translateZ(75px)",
                     transformStyle: "preserve-3d",
                 }}
-                className="absolute inset-4 grid place-content-center rounded-xl bg-[#51a2ff] shadow-lg overflow-hidden group"
+                className="absolute inset-4 grid place-content-center rounded-xl bg-[var(--secondary)] shadow-lg overflow-hidden group"
             >
                 <Image
                     loading='lazy'
@@ -71,10 +73,11 @@ export default function ProjectCard({ setOpen, project, setProject }: ProjectCar
                 {/* Overlay for buttons*/}
                 <div className={`absolute bottom-0 left-0 w-full flex justify-around p-4 ${isMobile() ? '' : 'translate-y-full group-hover:translate-y-0 transition-all duration-300'}`}>
                     <button onClick={() => { setOpen(true); setProject(project); }}
-                        className="text-2xl bg-white text-black px-4 py-2 rounded-xl shadow hover:bg-gray-100 cursor-pointer opacity-50 hover:opacity-100 transition-opacity">
+                        className={`text-2xl ${userTheme === 'dark' ? 'bg-[var(--text)]' : 'bg-white'} text-black px-4 py-2 rounded-xl shadow cursor-pointer opacity-50 hover:opacity-100 transition-opacity`}>
                         <FaEye />
                     </button>
-                    <button onClick={() => window.open(project?.link, '_blank')} className="text-2xl bg-white text-black px-4 py-2 rounded-xl shadow hover:bg-gray-100 cursor-pointer opacity-50 hover:opacity-100 transition-opacity">
+                    <button onClick={() => window.open(project?.link, '_blank')} 
+                        className={`text-2xl ${userTheme === 'dark' ? 'bg-[var(--text)]' : 'bg-white'} text-black px-4 py-2 rounded-xl shadow cursor-pointer opacity-50 hover:opacity-100 transition-opacity`}>
                         <FaCode />
                     </button>
                 </div>

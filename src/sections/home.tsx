@@ -17,7 +17,7 @@ export default function Home() {
     if (!translations) return null; // Handle case when translations are not yet loaded
     
     return (
-        <section id={translations.sections[0]} className="text-white h-screen">
+        <section id={translations.sections[0]} className="h-screen">
             <div className="container h-full w-[81vw] mx-auto flex flex-col-reverse lg:flex-row items-center justify-center">
                 {/* Social Icons */}
                 <div className="md:flex hidden lg:flex-col flex-row gap-4 lg:absolute right-6 top-1/2 transform -translate-y-1/2 mt-5">
@@ -26,11 +26,11 @@ export default function Home() {
                 </div>
                 {/* Text content */}
                 <div className="w-full lg:w-2/5 text-center lg:text-left">
-                    <h3 className="text-blue-400 tracking-wider text-4xl lg:text-5xl xl:text-6xl mb-12 xl:mb-20">{decodeHtmlEntities(translations.hello)}</h3>
-                    <h1 className="text-5xl lg:text-6xl xl:text-7xl tracking-wider font-bold mt-2 mb-12 xl:mb-20">{translations.name}</h1>
-                    <p className="mt-4 text-2xl xl:text-3xl">
+                    <h3 className="text-[var(--text)] tracking-wider text-4xl lg:text-5xl xl:text-6xl mb-12 xl:mb-20">{decodeHtmlEntities(translations.hello)}</h3>
+                    <h1 className="text-[var(--text)] text-5xl lg:text-6xl xl:text-7xl tracking-wider font-bold mt-2 mb-12 xl:mb-20">{translations.name}</h1>
+                    <p className="text-[var(--text)] mt-4 text-2xl xl:text-3xl">
                         {`${translations.passionate} `}
-                        <span className="text-blue-400">
+                        <span className="text-[var(--headings)]">
                             <TypeAnimation
                                 sequence={[
                                     translations.se,

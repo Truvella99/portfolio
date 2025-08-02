@@ -6,6 +6,9 @@
 import os
 import requests
 
+# List of themes to download icons for
+themes = ["dark", "light"]
+
 # List of icons to download
 icons = [
     "android", "androidstudio", "api", "assembly", "azure", "c", "chartjs", "chatgpt",
@@ -22,28 +25,29 @@ icons = [
 ]
 
 # Base URL
-base_url = "https://go-skill-icons.vercel.app/api/icons?i={icon}"
+base_url = "https://go-skill-icons.vercel.app/api/icons?i={icon}&theme={theme}"
 
 # Directory to save the SVG files
 output_dir = "public/skills"
 os.makedirs(output_dir, exist_ok=True)  # Create the directory if it doesn't exist
 
-# Loop through the icons and download the SVGs
-for icon in icons:
-    # Construct the URL
-    url = base_url.replace("{icon}", icon)
+# Loop through the themes and icons and download the SVGs
+for theme in themes:
+    for icon in icons:
+        # Construct the URL
+        url = base_url.replace("{icon}", icon).replace("{theme}", theme)
 
-    try:
-        # Fetch the SVG content
-        response = requests.get(url)
-        response.raise_for_status()  # Raise an error for HTTP issues
+        try:
+            # Fetch the SVG content
+            response = requests.get(url)
+            response.raise_for_status()  # Raise an error for HTTP issues
 
-        # Save the SVG file
-        file_path = os.path.join(output_dir, f"{icon}.svg")
-        with open(file_path, "w", encoding="utf-8") as file:
-            file.write(response.text)
+            # Save the SVG file
+            file_path = os.path.join(output_dir, icon + '_' + theme + ".svg")
+            with open(file_path, "w", encoding="utf-8") as file:
+                file.write(response.text)
 
-        print(f"Downloaded and saved: {file_path}")
+            print(f"Downloaded and saved: {file_path}")
 
-    except requests.exceptions.RequestException as e:
-        print(f"Failed to download {icon}: {e}")
+        except requests.exceptions.RequestException as e:
+            print(f"Failed to download {icon}: {e}")

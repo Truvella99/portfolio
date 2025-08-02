@@ -32,7 +32,7 @@ export default function ProjectsTabs({ activeTab, setActiveTab, tabs }: Projects
             <motion.button
               key={tab.id}
               className={`relative z-10 flex items-center justify-center px-5 ${isMobile() ? 'py-1' : 'py-3'} text-sm font-bold transition-colors duration-300 ${
-                isActive ? "text-black bg-white rounded-full" : "text-white rounded-full"
+                isActive ? "text-[var(--secondary)] bg-[var(--text)] rounded-full" : "text-[var(--text)] rounded-full"
               }`}
               onClick={() => handleTabClick(tab.id)}
               animate={{

@@ -9,6 +9,7 @@ import { isMobile } from "@/utils/isMobile";
 
 export default function ContactMe() {
     const translations = useContext(Translation_Theme_Context)?.translations;
+    const userTheme = useContext(Translation_Theme_Context)?.userTheme;
     const [name, setName] = useState({ value: "", error: "" });
     const [email, setEmail] = useState({ value: "", error: "" });
     const [subject, setSubject] = useState({ value: "", error: "" });
@@ -103,7 +104,7 @@ export default function ContactMe() {
     }
 
     return (
-        <section id={translations.sections[6]} className={"text-white text-white pb-16 lg:pt-16 px-8 md:px-20"}>
+        <section id={translations.sections[6]} className={"text-[var(--text)] pb-16 lg:pt-16 px-8 md:px-20"}>
             <div className="min-h-[70vh] w-[81vw] mx-auto grid grid-cols-1 lg:grid-cols-2 items-center">
                 {/* LEFT: IMAGE */}
                 <div className=" relative flex flex-col items-center justify-center">
@@ -117,7 +118,7 @@ export default function ContactMe() {
 
                 {/* RIGHT: TEXT + FORM */}
                 <div className={`${isMobile() ? 'w-full lg:w-[90%]' : 'w-[90%] mx-auto'}`}>
-                    <h1 className="text-blue-400 text-5xl font-bold leading-tight mb-20">{translations.contactMe}</h1>
+                    <h1 className="text-[var(--headings)] text-5xl font-bold leading-tight mb-20">{translations.contactMe}</h1>
                     <form onSubmit={(e) => handleSubmit(e)}>
                         {/* NAME + EMAIL */}
                         <div className="flex flex-row gap-4">
@@ -128,7 +129,7 @@ export default function ContactMe() {
                                     placeholder={translations.formName}
                                     value={name.value}
                                     onChange={(e) => setName((obj) => ({ ...obj, value: e.target.value }))}
-                                    className="mt-1 w-full px-4 py-2 border border-gray-600 rounded-md shadow-sm focus:outline-none focus:ring-2 focus:ring-blue-400 focus:border-blue-400"
+                                    className="mt-1 w-full px-4 py-2 border border-[var(--text)] rounded-md shadow-sm focus:outline-none focus:ring-2 focus:ring-[var(--headings)] focus:border-[var(--headings)]"
                                 />
                                 <p
                                     className={`mt-1 ml-4 text-sm transition-colors transition-opacity duration-1500 lg:h-5 h-10 ${name.error ? 'text-red-500 opacity-100' : 'opacity-0'
@@ -144,7 +145,7 @@ export default function ContactMe() {
                                     placeholder={translations.formEmail}
                                     value={email.value}
                                     onChange={(e) => setEmail((obj) => ({ ...obj, value: e.target.value }))}
-                                    className="mt-1 w-full px-4 py-2 border border-gray-600 rounded-md shadow-sm focus:outline-none focus:ring-2 focus:ring-blue-400 focus:border-blue-400"
+                                    className="mt-1 w-full px-4 py-2 border border-[var(--text)] rounded-md shadow-sm focus:outline-none focus:ring-2 focus:ring-[var(--headings)] focus:border-[var(--headings)]"
                                 />
                                 <p
                                     className={`mt-1 ml-4 text-sm transition-colors transition-opacity duration-1500 lg:h-5 h-10 ${email.error ? 'text-red-500 opacity-100' : 'opacity-0'
@@ -163,7 +164,7 @@ export default function ContactMe() {
                                 placeholder={translations.formSubject}
                                 value={subject.value}
                                 onChange={(e) => setSubject((obj) => ({ ...obj, value: e.target.value }))}
-                                className="mt-1 w-full px-4 py-2 border border-gray-600 rounded-md shadow-sm focus:outline-none focus:ring-2 focus:ring-blue-400 focus:border-blue-400"
+                                className="mt-1 w-full px-4 py-2 border border-[var(--text)] rounded-md shadow-sm focus:outline-none focus:ring-2 focus:ring-[var(--headings)] focus:border-[var(--headings)]"
                             />
                             <p
                                 className={`mt-1 ml-4 text-sm transition-colors transition-opacity duration-1500 lg:h-5 h-10 ${subject.error ? 'text-red-500 opacity-100' : 'opacity-0'
@@ -181,7 +182,7 @@ export default function ContactMe() {
                                 value={message.value}
                                 onChange={(e) => setMessage((obj) => ({ ...obj, value: e.target.value }))}
                                 rows={5}
-                                className="mt-1 w-full px-4 py-2 border border-gray-600 rounded-md shadow-sm focus:outline-none focus:ring-2 focus:ring-blue-400 focus:border-blue-400"
+                                className="mt-1 w-full px-4 py-2 border border-[var(--text)] rounded-md shadow-sm focus:outline-none focus:ring-2 focus:ring-[var(--headings)] focus:border-[var(--headings)]"
                             />
                             <p
                                 className={`mt-1 ml-4 text-sm transition-colors transition-opacity duration-1500 lg:h-5 h-10 ${message.error ? 'text-red-500 opacity-100' : 'opacity-0'
@@ -213,7 +214,7 @@ export default function ContactMe() {
                         <div className="flex justify-center">
                             <button
                                 type="submit"
-                                className="py-2 px-4 bg-blue-400 hover:bg-blue-600 text-white font-semibold rounded-md"
+                                className={`py-2 px-4 ${userTheme === 'dark' ? 'bg-[var(--headings)]' : 'bg-[var(--secondary)]'} hover:bg-[var(--accent)] text-[var(--text)] font-semibold rounded-md`}
                             >
                                 {translations.formSubmit}
                             </button>

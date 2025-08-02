@@ -1,11 +1,12 @@
 import { IconContext } from "react-icons";
 import type { IconUtilityProps } from "../../declarations";
 
-export default function IconUtility({ Icon, link }: IconUtilityProps) {
+export default function IconUtility({ Icon, link, color }: IconUtilityProps) {
     return (
         <IconContext.Provider value={{ size: '2em', className: "global-class-name" }}>
             {(link) ?
                 <Icon
+                    color={color || 'var(--text)'}
                     style={{
                         cursor: 'pointer',
                         transition: 'opacity 0.3s ease', // Smooth transition when opacity changes
@@ -14,7 +15,7 @@ export default function IconUtility({ Icon, link }: IconUtilityProps) {
                     onMouseOut={(e: React.MouseEvent<SVGElement, MouseEvent>) => (e.currentTarget.style.opacity = '1')} // Reset to fully opaque
                     onClick={(e: React.MouseEvent<SVGElement, MouseEvent>) => window.open(link, '_blank')} // Open a new tab
                 /> :
-                <Icon />
+                <Icon color='var(--text)'/>
             }
         </IconContext.Provider>
     );

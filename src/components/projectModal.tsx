@@ -1,5 +1,6 @@
 import { Dialog, DialogBackdrop, DialogPanel, Transition } from '@headlessui/react'
-import { Fragment, useEffect, useState } from 'react'
+import { Fragment, useEffect, useState, useContext } from 'react'
+import { Translation_Theme_Context } from "@/components/Provider";
 import { IoCloseSharp, IoChevronBack, IoChevronForward } from "react-icons/io5"
 import { FaCode } from "react-icons/fa"
 import { ProjectModalProps } from '../../declarations'
@@ -15,7 +16,7 @@ const processProjectDescription = (str: string) => {
 
   str.replace(regex, (match, url, text, index) => {
     segments.push(str.slice(lastIndex, index)); // Push text before the <a> tag
-    segments.push(<a key={index} href={url} target="_blank" className="text-white underline hover:text-cyan-500">{text}</a>);
+    segments.push(<a key={index} href={url} target="_blank" className="text-white underline hover:text-[var(--accent)]">{text}</a>);
     lastIndex = index + match.length;
     return match;
   });
@@ -31,6 +32,8 @@ export default function ProjectModal({
   setProject,
   projects
 }: ProjectModalProps) {
+  const userTheme = useContext(Translation_Theme_Context)?.userTheme;
+
   const [disableLeftArrow, setDisableLeftArrow] = useState(false);
   const [disableRightArrow, setDisableRightArrow] = useState(false);
 
@@ -101,11 +104,11 @@ export default function ProjectModal({
               leaveFrom="opacity-100 scale-100"
               leaveTo="opacity-0 scale-95"
             >
-              <DialogPanel className="relative h-[80vh] lg:w-[70vw] w-[80vw] transform overflow-visible bg-[var(--background)] text-left shadow-xl transition-all rounded-xl">
+              <DialogPanel className="relative h-[80vh] lg:w-[70vw] w-[80vw] transform overflow-visible bg-[var(--secondary)] text-left shadow-xl transition-all rounded-xl">
 
                 {/* Left Arrow */}
                 <div
-                  className={`absolute -left-10 top-1/2 -translate-y-1/2 z-20 ${disableLeftArrow ? 'opacity-50 text-white' : 'cursor-pointer text-white hover:text-gray-300'}`}
+                  className={`absolute -left-10 top-1/2 -translate-y-1/2 z-20 ${userTheme === 'dark' ? 'text-[var(--text)]' : 'text-white'} ${disableLeftArrow ? 'opacity-50' : 'cursor-pointer hover:text-gray-500'}`}
                   onClick={() => {
                     if (disableLeftArrow) return;
                     goToPrevProject();
@@ -116,7 +119,7 @@ export default function ProjectModal({
 
                 {/* Right Arrow */}
                 <div
-                  className={`absolute -right-10 top-1/2 -translate-y-1/2 z-20 ${disableRightArrow ? 'opacity-50 text-white' : 'cursor-pointer text-white hover:text-gray-300'}`}
+                  className={`absolute -right-10 top-1/2 -translate-y-1/2 z-20 ${userTheme === 'dark' ? 'text-[var(--text)]' : 'text-white'} ${disableRightArrow ? 'opacity-50' : 'cursor-pointer hover:text-gray-500'}`}
                   onClick={() => {
                     if (disableRightArrow) return;
                     goToNextProject();
@@ -157,7 +160,7 @@ export default function ProjectModal({
                     <div className="w-full text-white text-base">
                       <div className="flex gap-8 items-center">
                         <h1 className="text-2xl">{project?.name || ''}</h1>
-                        <IconUtility Icon={FaCode} link={project?.link || ''} />
+                        <IconUtility Icon={FaCode} link={project?.link || ''} color='white' />
                       </div>
                       {processProjectDescription((project?.description) ? project.description : '')}
                     </div>

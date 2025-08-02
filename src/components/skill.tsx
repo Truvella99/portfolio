@@ -1,9 +1,12 @@
 import { motion } from "framer-motion";
 import { SkillUtilityProps } from "../../declarations";
+import { useContext } from 'react'
+import { Translation_Theme_Context } from "@/components/Provider";
 
 export default function SkillUtility({ icon, link }: SkillUtilityProps) {
     const box = { width: 50, height: 50, borderRadius: 5};
-
+    const userTheme = useContext(Translation_Theme_Context)?.userTheme;
+    const oppositeTheme = userTheme === "dark" ? "light" : "dark";
     return (
         <motion.div whileHover={{ scale: 1.2 }} whileTap={{ scale: 0.8 }} style={box}>
             <svg width={box.width} height={box.height} 
@@ -12,7 +15,7 @@ export default function SkillUtility({ icon, link }: SkillUtilityProps) {
                 }}
                 onClick={() => window.open(link, '_blank')} // Open a new tab
             >
-                <image href={`./skills/${icon}.svg`} />
+                <image href={`./skills/${icon}_${oppositeTheme}.svg`} />
             </svg>
         </motion.div>
     );

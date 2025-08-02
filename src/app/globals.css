@@ -7,49 +7,72 @@
   --font-mono: var(--font-geist-mono);
 }
 
-/* ---------------- LIGHT THEME ---------------- */
-
 :root {
-  /* Define actual theme values as design tokens */
-  --light-background: #ffffff;
-  --light-foreground: #171717;
-  --light-secondary-background: #201c74;
-
-  --dark-background: #0A0A72;
-  --dark-foreground: #ededed;
-  --dark-secondary-background: #201c74;
-
+  /* Define theme values */
+  /* --------------------------------------------- */
+  /* ---------------- DARK THEME ---------------- */
+  /* --------------------------------------------- */
+  --dt-text: #e7e7f4;
+  --dt-background: #0a0a75;
+  --dt-primary: #a8a9cd;
+  --dt-secondary: #171793;
+  --dt-accent: #1414f0;
+  --dt-headings: #60a5fa;
+  /* --------------------------------------------- */
+  /* ---------------- LIGHT THEME ---------------- */
+  /* --------------------------------------------- */
+  --lt-text: #23233a;
+  --lt-background: #f5f7fa;
+  --lt-primary: #191af8;
+  --lt-secondary: #60a5fa;
+  --lt-accent: #3a5afe;
+  --lt-headings: #23233a;
+  /* --------------------------------------------- */
+  /* ------------ CSS VARIABLES TO USE ----------- */
+  /* --------------------------------------------- */
   /* Default to light theme (used when no system or user override) */
-  --background: var(--light-background);
-  --foreground: var(--light-foreground);
-  --secondary-background: var(--light-secondary-background);
+  --text: var(--lt-text);
+  --background: var(--lt-background);
+  --primary: var(--lt-primary);
+  --secondary: var(--lt-secondary);
+  --accent: var(--lt-accent);
+  --headings: var(--lt-headings);
 }
 
 /* If system prefers dark theme */
 @media (prefers-color-scheme: dark) {
   :root {
-    --background: var(--dark-background);
-    --foreground: var(--dark-foreground);
-    --secondary-background: var(--dark-secondary-background);
+    --text: var(--dt-text);
+    --background: var(--dt-background);
+    --primary: var(--dt-primary);
+    --secondary: var(--dt-secondary);
+    --accent: var(--dt-accent);
+    --headings: var(--dt-headings);
   }
 }
 
 /* If user explicitly sets theme */
 [data-theme='dark'] {
-  --background: var(--dark-background);
-  --foreground: var(--dark-foreground);
-  --secondary-background: var(--dark-secondary-background);
+  --text: var(--dt-text);
+  --background: var(--dt-background);
+  --primary: var(--dt-primary);
+  --secondary: var(--dt-secondary);
+  --accent: var(--dt-accent);
+  --headings: var(--dt-headings);
 }
 
 [data-theme='light'] {
-  --background: var(--light-background);
-  --foreground: var(--light-foreground);
-  --secondary-background: var(--light-secondary-background);
+  --text: var(--lt-text);
+  --background: var(--lt-background);
+  --primary: var(--lt-primary);
+  --secondary: var(--lt-secondary);
+  --accent: var(--lt-accent);
+  --headings: var(--lt-headings);
 }
 
 body {
   background: var(--background);
-  color: var(--foreground);
+  color: var(--text);
   font-family: Arial, Helvetica, sans-serif;
 }
 

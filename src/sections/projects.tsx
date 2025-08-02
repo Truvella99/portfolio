@@ -32,10 +32,10 @@ export default function Projects() {
     }
 
     return (
-        <section id={translations.sections[5]} className={"bg-[var(--secondary-background)] text-white py-16 px-8 md:px-20 flex items-center justify-center"}>
+        <section id={translations.sections[5]} className={"bg-[var(--secondary)] py-16 px-8 md:px-20 flex items-center justify-center"}>
             <div className="min-h-[30vh] w-[81vw] mx-auto flex flex-col">
                 <div>
-                    <h1 className="text-blue-400 text-5xl font-bold leading-tight mb-8">{translations.project}</h1>
+                    <h1 className="text-[var(--headings)] text-5xl font-bold leading-tight mb-8">{translations.project}</h1>
                     <ProjectsTabs tabs={translations.categories.map((category: string) => ({id:category,label:category}))} activeTab={activeTab} setActiveTab={setActiveTab} />
                 </div>
                 <ProjectModal open={open} setOpen={setOpen} project={project} setProject={setProject} projects={filterByTabCategory()} />

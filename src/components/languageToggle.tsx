@@ -30,17 +30,17 @@ export default function LanguageToggle() {
 
     return (
         <div ref={dropdownRef} className="relative w-[80px] flex align-center justify-center">
-            <div onClick={() => setOpenDropDown((oldValue) => !oldValue)} className={`p-1.5 md:ml-auto ${openDropDown ? 'bg-[#51a2ff]' : 'bg-transparent'} hover:bg-[#51a2ff] rounded-full text-white cursor-pointer`}>
+            <div onClick={() => setOpenDropDown((oldValue) => !oldValue)} className={`p-1.5 md:ml-auto ${openDropDown ? 'bg-[var(--secondary)]' : 'bg-transparent'} hover:bg-[var(--secondary)] rounded-full text-[var(--text)] cursor-pointer`}>
                 <IoLanguage size={isMobile() ? 18 : 24} />
             </div>
             
-            <div className={`absolute z-10 mt-10 ${openDropDown ? '' : 'hidden'} bg-[#51a2ff] rounded-lg`}>
+            <div className={`absolute z-10 mt-10 ${openDropDown ? '' : 'hidden'} bg-[var(--secondary)] rounded-lg`}>
                 <ul className="py-2 text-sm" aria-labelledby="dropdownDefaultButton">
                     <li>
-                        <img loading="lazy" width={70} height={35} src='./italian.png' onClick={() => toggleLanguage('it')} className="block px-4 py-2 bg-[#51a2ff] cursor-pointer"/>
+                        <img width={70} height={35} src='./italian.png' onClick={() => toggleLanguage('it')} className="block px-4 py-2 bg-[var(--secondary)] hover:opacity-50 cursor-pointer"/>
                     </li>
                     <li>
-                        <img loading="lazy" width={70} height={35} src='./english.png' onClick={() => toggleLanguage('en')} className="block px-4 py-2 bg-[#51a2ff] cursor-pointer"/>
+                        <img width={70} height={35} src='./english.png' onClick={() => toggleLanguage('en')} className="block px-4 py-2 bg-[var(--secondary)] hover:opacity-50 cursor-pointer"/>
                     </li>
                 </ul>
             </div>

@@ -55,6 +55,7 @@ interface Work {
 interface IconUtilityProps {
     Icon: IconType;
     link?: string;
+    color?: string;
 }
 
 interface Project {

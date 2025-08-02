@@ -39,7 +39,7 @@ export default function ThemeToggle() {
   }*/
 
   return (
-      <div onClick={toggleTheme} className="relative flex items-center p-1.5 rounded-full transform transition-transform duration-300 bg-transparent hover:bg-[#51a2ff]">
+      <div onClick={toggleTheme} className="relative flex items-center p-1.5 rounded-full transform transition-transform duration-300 bg-transparent hover:bg-[var(--secondary)]">
         {userTheme === 'light' || (!userTheme && window.matchMedia('(prefers-color-scheme: light)').matches) ?
           <MdSunny className="text-yellow-500" size={isMobile() ? 18 : 24}/> :
           <IoMdMoon className="text-white" size={isMobile() ? 18 : 24}/>
