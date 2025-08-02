@@ -95,10 +95,12 @@ html {
 
 /* SWEET ALERTS CUSTOM CSS */
 
-.custom-swal-popup { @apply bg-[var(--secondary-background)] rounded-lg shadow-lg; }
+.custom-swal-popup { @apply bg-[var(--secondary)] rounded-lg shadow-lg; }
 
-.custom-swal-title { @apply text-white; }
+.custom-swal-title { @apply text-[var(--text)]; }
 
-.confirm-btn { @apply bg-blue-400 text-white px-4 py-2 rounded hover:bg-blue-600; }
+.confirm-btn-dark { @apply bg-[var(--headings)] text-[var(--text)] px-4 py-2 rounded hover:bg-[var(--accent)]; }
+
+.confirm-btn-light { @apply bg-blue-500 text-[var(--text)] px-4 py-2 rounded hover:bg-[var(--accent)]; }
 
 .error-btn { @apply bg-red-400 text-white px-4 py-2 rounded hover:bg-red-600; }

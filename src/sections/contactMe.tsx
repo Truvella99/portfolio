@@ -1,4 +1,4 @@
-import { useContext, useState, useRef } from "react";
+import { useContext, useState, useRef, use } from "react";
 import { Translation_Theme_Context } from "@/components/Provider";
 import { DotLottieReact } from '@lottiefiles/dotlottie-react';
 import ReCAPTCHA from "react-google-recaptcha";
@@ -79,7 +79,7 @@ export default function ContactMe() {
                     customClass: {
                         popup: 'custom-swal-popup',
                         title: 'custom-swal-title',
-                        confirmButton: 'confirm-btn'
+                        confirmButton: userTheme === 'dark' ? 'confirm-btn-dark' : 'confirm-btn-light'
                     }
                 });
                 setName({ value: "", error: "" });
