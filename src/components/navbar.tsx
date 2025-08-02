@@ -105,12 +105,12 @@ export default function NavBar(props: any) {
   }
 
   return (
-    <Disclosure as="nav" className="bg-[#0A0A72] md:sticky top-0 z-80">
+    <Disclosure as="nav" className="bg-[var(--secondary-background)] md:sticky top-0 z-80">
       <div className="mx-auto max-w-7xl px-2 md:px-6 lg:px-8">
         <div className="relative flex h-16 items-center justify-between">
           <div className="absolute inset-y-0 left-0 flex items-center md:hidden">
             {/* Mobile menu button*/}
-            <DisclosureButton onClick={() => {setIsSideBarOpen((oldValue: boolean) => !oldValue);}} className="group relative inline-flex items-center justify-center rounded-md p-2 text-bg-blue-400 hover:bg-blue-400 hover:text-white focus:ring-2 focus:ring-white focus:outline-hidden focus:ring-inset">
+            <DisclosureButton onClick={() => {setIsSideBarOpen((oldValue: boolean) => !oldValue);}} className="group relative inline-flex items-center justify-center rounded-md p-2 text-[var(--foreground)] hover:bg-blue-400 hover:text-white focus:ring-2 focus:ring-white focus:outline-hidden focus:ring-inset">
               <span className="absolute -inset-0.5" />
               <span className="sr-only">Open main menu</span>
               <Bars3Icon aria-hidden="true" className="block size-6 group-data-open:hidden" />
@@ -128,7 +128,7 @@ export default function NavBar(props: any) {
                       href={item.href}
                       aria-current={(item.name === section) ? 'page' : undefined}
                       className={classNames(
-                        (item.name === section) ? 'bg-blue-400 text-white' : 'text-gray-300 hover:bg-blue-400 hover:text-white',
+                        (item.name === section) ? 'bg-blue-400 text-white' : 'text-[var(--foreground)] hover:bg-blue-400 hover:text-white',
                         'rounded-md px-3 py-2 text-sm font-medium',
                       )}
                       onClick={() => handleNavClick(item.name)}
@@ -156,7 +156,7 @@ export default function NavBar(props: any) {
             width={180}
             height={38}
           />
-          <h1 className="text-2xl font-bold pt-5 pb-5">{translations.name}</h1>
+          <h1 className="text-2xl font-bold pt-5 pb-5 text-[var(--foreground)]">{translations.name}</h1>
           {navigation.map((item: any) => (
             <div key={item.name} style={{ display: 'flex', alignItems: 'center' }}>
               {/* <IconUtility Icon={item.Icon}/> */}
@@ -166,7 +166,7 @@ export default function NavBar(props: any) {
                 href={item.href}
                 aria-current={(item.name === section) ? 'page' : undefined}
                 className={classNames(
-                  (item.name === section) ? 'bg-blue-400 text-white' : 'text-gray-300 hover:bg-blue-400 hover:text-white',
+                  (item.name === section) ? 'bg-blue-400 text-white' : 'text-[var(--foreground)] hover:bg-blue-400 hover:text-white',
                   'block rounded-md px-3 py-2 text-base font-medium',
                 )}
                 onClick={() => handleNavClick(item.name)}

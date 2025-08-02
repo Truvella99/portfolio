@@ -17,7 +17,7 @@ export default function Home() {
     if (!translations) return null; // Handle case when translations are not yet loaded
     
     return (
-        <section id={translations.sections[0]} className="text-white h-screen">
+        <section id={translations.sections[0]} className="text-[var(--foreground)] h-screen">
             <div className="container h-full w-[81vw] mx-auto flex flex-col-reverse lg:flex-row items-center justify-center">
                 {/* Social Icons */}
                 <div className="md:flex hidden lg:flex-col flex-row gap-4 lg:absolute right-6 top-1/2 transform -translate-y-1/2 mt-5">

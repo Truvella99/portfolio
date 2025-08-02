@@ -15,7 +15,7 @@ const processProjectDescription = (str: string) => {
 
   str.replace(regex, (match, url, text, index) => {
     segments.push(str.slice(lastIndex, index)); // Push text before the <a> tag
-    segments.push(<a key={index} href={url} target="_blank" className="text-white underline hover:text-cyan-500">{text}</a>);
+    segments.push(<a key={index} href={url} target="_blank" className="text-[var(--foreground)] underline hover:text-cyan-500">{text}</a>);
     lastIndex = index + match.length;
     return match;
   });
@@ -105,7 +105,7 @@ export default function ProjectModal({
 
                 {/* Left Arrow */}
                 <div
-                  className={`absolute -left-10 top-1/2 -translate-y-1/2 z-20 ${disableLeftArrow ? 'opacity-50 text-white' : 'cursor-pointer text-white hover:text-gray-300'}`}
+                  className={`absolute -left-10 top-1/2 -translate-y-1/2 z-20 ${disableLeftArrow ? 'opacity-50 text-[var(--foreground)]' : 'cursor-pointer text-[var(--foreground)] hover:opacity-75'}`}
                   onClick={() => {
                     if (disableLeftArrow) return;
                     goToPrevProject();
@@ -116,7 +116,7 @@ export default function ProjectModal({
 
                 {/* Right Arrow */}
                 <div
-                  className={`absolute -right-10 top-1/2 -translate-y-1/2 z-20 ${disableRightArrow ? 'opacity-50 text-white' : 'cursor-pointer text-white hover:text-gray-300'}`}
+                  className={`absolute -right-10 top-1/2 -translate-y-1/2 z-20 ${disableRightArrow ? 'opacity-50 text-[var(--foreground)]' : 'cursor-pointer text-[var(--foreground)] hover:opacity-75'}`}
                   onClick={() => {
                     if (disableRightArrow) return;
                     goToNextProject();
@@ -126,7 +126,7 @@ export default function ProjectModal({
                 </div>
 
                 {/* Close button */}
-                <div className="absolute right-4 top-4 text-white hover:text-gray-500 cursor-pointer z-30">
+                <div className="absolute right-4 top-4 text-[var(--foreground)] hover:opacity-75 cursor-pointer z-30">
                   <IoCloseSharp
                     size={isMobile() ? 18 : 24}
                     onClick={() => {
@@ -154,7 +154,7 @@ export default function ProjectModal({
                       height={300}
                       className="pt-4 h-[75%] w-full object-contain"
                     />
-                    <div className="w-full text-white text-base">
+                    <div className="w-full text-[var(--foreground)] text-base">
                       <div className="flex gap-8 items-center">
                         <h1 className="text-2xl">{project?.name || ''}</h1>
                         <IconUtility Icon={FaCode} link={project?.link || ''} />

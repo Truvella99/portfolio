@@ -53,11 +53,11 @@ export default function EducationCard({ education }: { education: Education }) {
                     </div>
                     <div className="ml-5 md:mt-0 mt-5">
                         <div>
-                            <h3 className="text-xl font-semibold text-gray-900 dark:text-white">{education.title}</h3>
-                            <p className="text-gray-600 dark:text-gray-300">{education.institution}</p>
+                            <h3 className="text-xl font-semibold text-[var(--foreground)]">{education.title}</h3>
+                            <p className="text-[var(--foreground)] opacity-75">{education.institution}</p>
                         </div>
-                        <span className="text-sm text-gray-400">{education.date}</span>
-                        <p className="mt-4 text-gray-700 dark:text-gray-200">{education.place}</p>
+                        <span className="text-sm text-[var(--foreground)] opacity-60">{education.date}</span>
+                        <p className="mt-4 text-[var(--foreground)] opacity-85">{education.place}</p>
                     </div>
                 </div>
             </div>

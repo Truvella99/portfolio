@@ -6,11 +6,11 @@ export default function Skills() {
     const translations = useContext(Translation_Theme_Context)?.translations;
     if (!translations) return null; // Handle case when translations are not yet loaded
     return (
-        <section id={translations.sections[2]} className="text-white py-16 px-8 md:px-20 flex items-center justify-center">
+        <section id={translations.sections[2]} className="text-[var(--foreground)] py-16 px-8 md:px-20 flex items-center justify-center">
             <div className="min-h-[30vh] w-[81vw] mx-auto flex flex-col-reverse lg:flex-row items-center">
                 <div>
                     <h1 className="text-blue-400 text-5xl font-bold leading-tight mb-8">{translations.skills}</h1>
-                    <p className="text-gray-300 mb-12 text-xl">{translations.skillsDescription}</p>
+                    <p className="text-[var(--foreground)] opacity-75 mb-12 text-xl">{translations.skillsDescription}</p>
                     
                     <div className="grid lg:grid-cols-14 md:grid-cols-10 grid-cols-5 gap-6 ">
                         {/* Map through the skills files and create a SkillUtility component for each skill*/}

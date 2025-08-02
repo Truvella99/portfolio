@@ -7,10 +7,66 @@
   --font-mono: var(--font-geist-mono);
 }
 
-/* ---------------- LIGHT THEME ---------------- */
-
 :root {
-  /* Define actual theme values as design tokens */
+  /* Define theme values */
+  /* ---------------- DARK THEME ---------------- */
+  /** Base colors */
+  --clr-dark-a0: #000000;
+  --clr-light-a0: #ffffff;
+
+  /** Theme primary colors */
+  --clr-primary-a0: #afbab7;
+  --clr-primary-a10: #b8c1bf;
+  --clr-primary-a20: #c0c9c7;
+  --clr-primary-a30: #c9d1ce;
+  --clr-primary-a40: #d2d8d6;
+  --clr-primary-a50: #dbe0de;
+
+  /** Theme surface colors */
+  --clr-surface-a0: #0a0a73;
+  --clr-surface-a10: #332382;
+  --clr-surface-a20: #503c92;
+  --clr-surface-a30: #6955a2;
+  --clr-surface-a40: #826fb1;
+  --clr-surface-a50: #9b8ac1;
+
+  /** Theme tonal surface colors */
+  --clr-surface-tonal-a0: #281b7a;
+  --clr-surface-tonal-a10: #443189;
+  --clr-surface-tonal-a20: #5c4897;
+  --clr-surface-tonal-a30: #7460a6;
+  --clr-surface-tonal-a40: #8b79b5;
+  --clr-surface-tonal-a50: #a292c4;
+
+  /* ---------------- LIGHT THEME ---------------- */
+  /** Base colors */
+  --clr-dark-a0: #000000;
+  --clr-light-a0: #ffffff;
+
+  /** Theme primary colors */
+  --clr-primary-a0: #0a0a73;
+  --clr-primary-a10: #241875;
+  --clr-primary-a20: #352577;
+  --clr-primary-a30: #423179;
+  --clr-primary-a40: #4e3e7a;
+  --clr-primary-a50: #594b7c;
+
+  /** Theme surface colors */
+  --clr-surface-a0: #ffffff;
+  --clr-surface-a10: #f0f0f0;
+  --clr-surface-a20: #e1e1e1;
+  --clr-surface-a30: #d3d3d3;
+  --clr-surface-a40: #c5c5c5;
+  --clr-surface-a50: #b6b6b6;
+
+  /** Theme tonal surface colors */
+  --clr-surface-tonal-a0: #e8e4f1;
+  --clr-surface-tonal-a10: #dcd8e4;
+  --clr-surface-tonal-a20: #d0cdd7;
+  --clr-surface-tonal-a30: #c4c2ca;
+  --clr-surface-tonal-a40: #b8b6bd;
+  --clr-surface-tonal-a50: #adabb1;
+
   --light-background: #ffffff;
   --light-foreground: #171717;
   --light-secondary-background: #201c74;
