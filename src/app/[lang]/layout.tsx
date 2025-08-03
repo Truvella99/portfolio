@@ -25,7 +25,7 @@ export default async function RootLayout({
   return (
     <html lang={lang}>
       <head>
-        <meta name="google-site-verification" content="N10fq6owwzdQQ_QbCAAE_nHXj3gJF1ai0sqzOxuN1Ew" />
+        <meta name="google-site-verification" content="-eqTQY1cNSaWuVMa3l2iLXDeDZhc3kZh46uETS2OuF0" />
         <meta content="width=device-width, initial-scale=1.0" name="viewport" />
         <meta httpEquiv="Content-Type" content="text/html; charset=UTF-8" />
         <title>{translations.meta.title}</title>
