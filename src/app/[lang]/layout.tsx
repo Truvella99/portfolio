@@ -6,6 +6,12 @@ import { Lang } from "../../../declarations";
 const geistSans = Geist({ variable: "--font-geist-sans", subsets: ["latin"] });
 const geistMono = Geist_Mono({ variable: "--font-geist-mono", subsets: ["latin"] });
 
+
+export function generateStaticParams() {
+  const locales: Lang[] = ["en", "it"];
+  return locales.map((lang) => ({ lang }));
+}
+
 export default async function RootLayout({
   children,
   params,
