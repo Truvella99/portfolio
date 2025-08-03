@@ -3,13 +3,17 @@ declare module "*.jsonc" {
     const value: Record<string, any>;
     export default value;
 }
-  
+
+// ----------------------- LANGUAGES ----------------------- //
+
+type Lang = "en" | "it";
+
 // ----------------------- INTERFACES ----------------------- //
 
 interface Translation_Theme_ContextType {
   translations: Record<string, any> | undefined;
-  language: string;
-  setLanguage: (lang: string) => void;
+  language: Lang;
+  setLanguage: (lang: Lang) => void;
   userTheme: 'light' | 'dark' | null;
   setUserTheme: (theme: 'light' | 'dark' | null) => void;
 }
@@ -92,5 +96,6 @@ export {
     IconUtilityProps,
     Project,
     ProjectCardProps,
-    ProjectModalProps
+    ProjectModalProps,
+    Lang
 };

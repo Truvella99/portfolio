@@ -1,12 +1,12 @@
 import React, { useState, useRef, useEffect } from "react";
-import { useContext } from "react";
-import { Translation_Theme_Context } from "@/components/Provider";
 import { IoLanguage } from "react-icons/io5";
 import { isMobile } from "@/utils/isMobile";
+import { Lang } from "../../declarations";
+import { useRouter, usePathname } from "next/navigation";
 
 export default function LanguageToggle() {
-    const language = useContext(Translation_Theme_Context)?.language;
-    const setLanguage = useContext(Translation_Theme_Context)?.setLanguage;
+    const router = useRouter();
+    const pathname = usePathname();
     const [openDropDown, setOpenDropDown] = useState(false);
     const dropdownRef = useRef<HTMLDivElement>(null);
 
@@ -23,9 +23,12 @@ export default function LanguageToggle() {
         };
     }, []);
 
-    const toggleLanguage = (lang: string) => {
-        setLanguage?.(lang);
-        setOpenDropDown(false);
+    const toggleLanguage = (lang: Lang) => {
+        // setLanguage?.(lang);
+        // setOpenDropDown(false);
+        // Redirect to language URL
+        const newPathname = pathname.replace(/^\/(it|en)/, `/${lang}`);
+        router.push(newPathname);
     };
 
     return (

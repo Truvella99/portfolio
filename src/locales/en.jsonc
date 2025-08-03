@@ -1,4 +1,10 @@
 {
+  // Meta Tags For SEO
+  "meta": {
+    "title": "Domenico Gagliardo - Computer Engineer Portfolio",
+    "description": "Welcome to my portfolio website. I'm Domenico Gagliardo, a Computer Engineer. Find out more about me.",
+    "keywords": "computer engineering, programming, portfolio, github, unisa, university of Salerno, polytechnic of Turin, software engineer, software developer, mobile developer, full-stack developer"
+  },
   // List of sections for navigation or display
   "sections": [
     "Home",          // Home section

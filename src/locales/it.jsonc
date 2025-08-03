@@ -1,4 +1,10 @@
 {
+    // Meta Tags For SEO
+    "meta": {
+      "title": "Domenico Gagliardo - Portfolio Ingegnere Informatico",
+      "description": "Benvenuto nel mio sito web portfolio. Sono Domenico Gagliardo, un Ingegnere Informatico. Scopri di più su di me.",
+      "keywords": "ingegneria informatica, programmazione, portfolio, github, unisa, università di salerno, politecnico di torino, software engineer, software developer, mobile developer, full-stack developer"
+    },
     // List of sections for navigation or display
     "sections": [
       "Home",          // Home section
