@@ -6,11 +6,19 @@
             http://www.sitemaps.org/schemas/sitemap/0.9/sitemap.xsd">
 <!-- created with Free Online Sitemap Generator www.xml-sitemaps.com -->
 
-
 <url>
-  <loc>https://truvella99.github.io/portfolio/</loc>
-  <lastmod>2025-05-16T13:11:41+00:00</lastmod>
+  <loc>https://portfolio-smoky-phi-btlyo3c6f3.vercel.app/</loc>
+  <lastmod>2025-08-03T16:45:31+00:00</lastmod>
 </url>
 
+<url>
+  <loc>https://portfolio-smoky-phi-btlyo3c6f3.vercel.app/en</loc>
+  <lastmod>2025-08-03T16:45:31+00:00</lastmod>
+</url>
+
+<url>
+  <loc>https://portfolio-smoky-phi-btlyo3c6f3.vercel.app/it</loc>
+  <lastmod>2025-08-03T16:45:31+00:00</lastmod>
+</url>
 
 </urlset>
