@@ -1,0 +1,3 @@
+User-agent: *
+Allow: /
+Sitemap: https://portfolio-smoky-phi-btlyo3c6f3.vercel.app/sitemap.xml
