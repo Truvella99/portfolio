@@ -245,7 +245,7 @@
       "id": 1,
       "name": "Portfolio",
       "category": "Web",
-      "description": "Website, Representing the Personal Portfolio, built from scratch with the <a href='https://code.visualstudio.com/' target='_blank'>Visual Studio Code</a> IDE, using <a href='https://nextjs.org/' target='_blank'>Next.JS</a> as framework, <a href='https://tailwindcss.com/' target='_blank'>Tailwind CSS</a> for styling and <a href='https://www.typescriptlang.org/' target='_blank'>Typescript</a> as main programming language. As hosting platform, <a href='https://pages.github.com/' target='_blank'>Github pages</a> has been employed by leveraging on <a href='https://github.com/features/actions' target='_blank'>Github Actions</a>.",
+      "description": "Website, Representing the Personal Portfolio, built from scratch with the <a href='https://code.visualstudio.com/' target='_blank'>Visual Studio Code</a> IDE, using <a href='https://nextjs.org/' target='_blank'>Next.JS</a> as framework, <a href='https://tailwindcss.com/' target='_blank'>Tailwind CSS</a> for styling and <a href='https://www.typescriptlang.org/' target='_blank'>Typescript</a> as main programming language. As hosting platform, <a href='https://vercel.com/' target='_blank'>Vercel</a> has been employed, allowing to perform Server-Side Operations like middleware, API routes, and dynamic SSR. Particularly for this project, a middleware has been employed to implement multilanguage and redirect to the corresponding URL. Meta tags for SEO are dinamically handled depending on the language as well.",
       "image": "./projects/portfolio.png",
       "link": "https://github.com/Truvella99/portfolio"
     },

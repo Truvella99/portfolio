@@ -150,7 +150,6 @@ export default function ProjectModal({
                     className="h-full px-6 pt-6 pb-4 flex flex-col items-center space-y-6 overflow-auto"
                   >
                     <Image
-                      loading='lazy'
                       src={(project?.image) ? project.image : ''}
                       alt="Illustration"
                       width={300}
