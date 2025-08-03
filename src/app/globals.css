@@ -104,3 +104,13 @@ html {
 .confirm-btn-light { @apply bg-blue-500 text-[var(--text)] px-4 py-2 rounded hover:bg-[var(--accent)]; }
 
 .error-btn { @apply bg-red-400 text-white px-4 py-2 rounded hover:bg-red-600; }
+
+/* 
+------------------------- THEMES SOURCES -------------------------
+
+https://www.realtimecolors.com/?colors=e7e7f4-0a0a75-a8a9cd-171793-1414f0&fonts=Volkhov-Volkhov
+https://www.realtimecolors.com/?colors=23233a-f5f7fa-191af8-60a5fa-3a5afe&fonts=Inter-Inter
+
+https://colorffy.com/dark-theme-generator?colors=AFBAB7-0A0A73
+https://colorffy.com/light-theme-generator?colors=0A0A73-FFFFFF
+*/

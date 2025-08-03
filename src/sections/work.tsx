@@ -16,7 +16,7 @@ export default function Work() {
                     <h1 className="text-[var(--headings)] text-5xl font-bold leading-tight mb-8">{translations.workExperience}</h1>
                     <p className="text-[var(--text)] mb-12 text-xl">{translations.workExperienceDescription}</p>
                     {/* Map through the work experiences */}
-                    <VerticalTimeline>
+                    <VerticalTimeline lineColor="var(--text)">
                         {translations.workExperiences.map((workExperience: Work, index: number) => (
                             <VerticalTimelineElement
                                 key={index}
@@ -24,6 +24,7 @@ export default function Work() {
                                 contentStyle={{ background: 'var(--secondary)', color: '#fff' }}
                                 contentArrowStyle={{ borderRight: '7px solid  var(--secondary)' }}
                                 date={workExperience.date}
+                                dateClassName="text-[var(--text)]"
                                 iconStyle={{ background: 'var(--text)', color: '#fff', cursor: "pointer" }}
                                 iconOnClick={() => {window.open(workExperience.website, "_blank")}}
                                 icon={<Image loading='lazy' alt="" src={workExperience.image} className="rounded-full" width={100} height={100}/>}
@@ -48,9 +49,9 @@ export default function Work() {
                                     viewport={{ once: true, amount: 0.3 }}
                                     onClick={() => {window.open(workExperience.website, "_blank")}}
                                 >
-                                    <h3 className="text-xl font-bold">{workExperience.title}</h3>
-                                    <h4 className="text-lg">{workExperience.institution}</h4>
-                                    <span style={{ display: 'block' }}>{workExperience.place}</span>
+                                    <h3 className="text-[var(--text)] text-xl font-bold">{workExperience.title}</h3>
+                                    <h4 className="text-[var(--text)] text-lg">{workExperience.institution}</h4>
+                                    <span className="text-[var(--text)]" style={{ display: 'block' }}>{workExperience.place}</span>
                                 </motion.div>
 
                             </VerticalTimelineElement>
