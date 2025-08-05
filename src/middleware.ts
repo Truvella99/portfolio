@@ -26,7 +26,7 @@ export function middleware(req: NextRequest) {
     const url = req.nextUrl.clone();
     url.pathname = `/${defaultLocale}${pathname}`;
 
-    const response = NextResponse.redirect(url);
+    const response = NextResponse.redirect(url, 301);
     if (process.env.VERCEL_ENV === "production") {
       response.headers.delete("x-robots-tag");
       response.headers.set("x-robots-tag", "index, follow");
