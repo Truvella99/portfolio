@@ -20,7 +20,7 @@ icons = [
     "ngrok", "nodejs", "notion", "notepadpp", "npm", "numpy", "obs", "overleaf",
     "postgresql", "postman", "powerpoint", "prometheus", "pycharm", "python", "pytorch",
     "react", "reactbootstrap", "rust", "spark", "spring", "sqlite", "tailwindcss",
-    "teams", "tomcat", "typescript", "vim", "vite", "vmwareworkstation", "vscode",
+    "teams", "tomcat", "typescript", "vercel", "vim", "vite", "vmwareworkstation", "vscode",
     "webstorm", "windows", "wireshark", "word", "wsl", "yaml"
 ]
 
