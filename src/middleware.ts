@@ -25,10 +25,21 @@ export function middleware(req: NextRequest) {
   if (pathnameIsMissingLocale) {
     const url = req.nextUrl.clone();
     url.pathname = `/${defaultLocale}${pathname}`;
-    return NextResponse.redirect(url);
+
+    const response = NextResponse.redirect(url);
+    if (process.env.VERCEL_ENV === "production") {
+      response.headers.delete("x-robots-tag");
+      response.headers.set("x-robots-tag", "index, follow");
+    }
+    return response;
   }
 
-  return;
+  const response = NextResponse.next();
+  if (process.env.VERCEL_ENV === "production") {
+    response.headers.delete("x-robots-tag");
+    response.headers.set("x-robots-tag", "index, follow");
+  }
+  return response;
 }
 
 export const config = {
