@@ -33,7 +33,7 @@ export default function ProjectModal({
   projects
 }: ProjectModalProps) {
   const userTheme = useContext(Translation_Theme_Context)?.userTheme;
-
+  const isVideo = project?.media.endsWith('.mp4');
   const [disableLeftArrow, setDisableLeftArrow] = useState(false);
   const [disableRightArrow, setDisableRightArrow] = useState(false);
 
@@ -149,13 +149,19 @@ export default function ProjectModal({
                     transition={{ duration: 0.3 }}
                     className="h-full px-6 pt-6 pb-4 flex flex-col items-center space-y-6 overflow-auto"
                   >
-                    <Image
-                      src={(project?.image) ? project.image : ''}
-                      alt="Illustration"
-                      width={300}
-                      height={300}
-                      className="pt-4 h-[75%] w-full object-contain"
-                    />
+                    {isVideo ?
+                      <video autoPlay muted loop playsInline className="pt-4 h-[75%] w-full object-contain">
+                        <source src={project?.media} type="video/mp4"/>
+                      </video>
+                      :
+                      <Image
+                        src={(project?.media) ? project.media : ''}
+                        alt="Illustration"
+                        width={300}
+                        height={300}
+                        className="pt-4 h-[75%] w-full object-contain"
+                      />
+                    }
                     <div className="w-full text-white text-base">
                       <div className="flex gap-8 items-center">
                         <h1 className="text-2xl">{project?.name || ''}</h1>

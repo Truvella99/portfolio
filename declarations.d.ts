@@ -67,7 +67,7 @@ interface Project {
     name: string,
     category: string,
     description: string
-    image: string,
+    media: string,
     link: string
 }
 

@@ -11,6 +11,7 @@ const HALF_ROTATION_RANGE = ROTATION_RANGE / 2;
 
 export default function ProjectCard({ setOpen, project, setProject }: ProjectCardProps) {
     const userTheme = useContext(Translation_Theme_Context)?.userTheme;
+    const isVideo = project?.media.endsWith('.mp4');
     const ref = useRef<HTMLDivElement | null>(null);
 
     const x = useMotionValue(0);
@@ -62,13 +63,19 @@ export default function ProjectCard({ setOpen, project, setProject }: ProjectCar
                 }}
                 className="absolute inset-4 grid place-content-center rounded-xl bg-[var(--secondary)] shadow-lg overflow-hidden group"
             >
-                <Image
-                    // loading='lazy'
-                    src={project.image}
-                    alt="Card Image"
-                    fill
-                    className="object-cover"
-                />
+                {isVideo ?
+                    <video autoPlay muted loop playsInline className="object-cover">
+                        <source src={project.media} type="video/mp4"/>
+                    </video>
+                    :
+                    <Image
+                        // loading='lazy'
+                        src={project.media}
+                        alt="Card Image"
+                        fill
+                        className="object-cover"
+                    />
+                }
 
                 {/* Overlay for buttons*/}
                 <div className={`absolute bottom-0 left-0 w-full flex justify-around p-4 ${isMobile() ? '' : 'translate-y-full group-hover:translate-y-0 transition-all duration-300'}`}>
