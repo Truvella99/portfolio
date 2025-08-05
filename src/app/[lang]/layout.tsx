@@ -36,6 +36,10 @@ export default async function RootLayout({
         <meta name="revisit-after" content="30 days" />
         <meta name="author" content="Domenico Gagliardo" />
         <meta name="copyright" content="Domenico Gagliardo" />
+        <link rel="canonical" href={`https://portfolio-truvella99s-projects.vercel.app/${lang}`} />
+        <link rel="alternate" hrefLang="en" href={`https://portfolio-truvella99s-projects.vercel.app/en`} />
+        <link rel="alternate" hrefLang="it" href={`https://portfolio-truvella99s-projects.vercel.app/it`} />
+        <link rel="alternate" hrefLang="x-default" href="https://portfolio-truvella99s-projects.vercel.app/" />
         <link rel="icon" href="./favicon.ico" />
         <link rel="apple-touch-icon" href="./apple-touch-icon.png" />
       </head>
