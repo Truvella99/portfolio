@@ -7,18 +7,15 @@
 <!-- created with Free Online Sitemap Generator www.xml-sitemaps.com -->
 
 <url>
-  <loc>https://portfolio-truvella99s-projects.vercel.app/</loc>
-  <lastmod>2025-08-03T16:45:31+00:00</lastmod>
-</url>
-
-<url>
   <loc>https://portfolio-truvella99s-projects.vercel.app/en</loc>
-  <lastmod>2025-08-03T16:45:31+00:00</lastmod>
+  <lastmod>2025-08-11T16:45:31+00:00</lastmod>
+  <priority>1.00</priority>
 </url>
 
 <url>
   <loc>https://portfolio-truvella99s-projects.vercel.app/it</loc>
-  <lastmod>2025-08-03T16:45:31+00:00</lastmod>
+  <lastmod>2025-08-11T16:45:31+00:00</lastmod>
+  <priority>1.00</priority>
 </url>
 
 </urlset>
