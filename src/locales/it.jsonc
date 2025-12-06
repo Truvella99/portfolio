@@ -183,10 +183,18 @@
     "workExperienceDescription": "Sono in grado di combinare le mie conoscenze tecniche con capacità comunicative e interpersonali, acquisite attraverso esperienze pratiche e scolastiche. Queste esperienze mi hanno anche aiutato a sviluppare la capacità di lavorare efficacemente in un team.",
     "workExperiences": [
       {
+        "title": "Sviluppatore Mobile Android",
+        "institution": "Iriscube Reply",
+        "date": "01/09/2025 - Presente",
+        "place": "Via Cardinale Massaia, 83, 10147 Torino (TO), Italia",
+        "website": "https://www.reply.com/iriscube-reply/it",
+        "image": "./work/iriscube.jpg"
+      },
+      {
         "title": "Tirocinio Curriculare",
         "institution": "Politecnico di Torino",
         "date": "15/09/2024 - 15/03/2025",
-        "place": "Corso Duca degli Abruzzi, 24, 10129 Torino TO, Italia",
+        "place": "Corso Duca degli Abruzzi, 24, 10129 Torino (TO), Italia",
         "website": "https://www.polito.it/",
         "image": "./work/polito.jpg"
       },
@@ -202,7 +210,7 @@
         "title": "Promotore turistico Fiera Bit Milano",
         "institution": "Cicas Turismo",
         "date": "11/02/2018 - 13/02/2018",
-        "place": "Viale Teodorico, 20149 Milan (MI), Italia",
+        "place": "Viale Teodorico, 20149 Milano (MI), Italia",
         "website": "https://bit.fieramilano.it/",
         "image": "./work/bit.jpg"
       },

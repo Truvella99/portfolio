@@ -183,10 +183,18 @@
   "workExperienceDescription": "I am able to combine my technical knowledge with communication and interpersonal abilities, gained through practical and high school experiences. These experiences have helped me develop the ability to work effectively in a team.",
   "workExperiences": [
     {
+      "title": "Mobile Android Developer",
+      "institution": "Iriscube Reply",
+      "date": "01/09/2025 - Present",
+      "place": "Via Cardinale Massaia, 83, 10147 Turin (TO), Italy",
+      "website": "https://www.reply.com/iriscube-reply/en",
+      "image": "./work/iriscube.jpg"
+    },
+    {
       "title": "Curricular Internship",
       "institution": "Politecnico di Torino",
       "date": "15/09/2024 - 15/03/2025",
-      "place": "Corso Duca degli Abruzzi, 24, 10129 Torino TO, Italy",
+      "place": "Corso Duca degli Abruzzi, 24, 10129 Turin (TO), Italy",
       "website": "https://www.polito.it/en",
       "image": "./work/polito.jpg"
     },
